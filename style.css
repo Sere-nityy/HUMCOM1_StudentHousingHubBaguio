@@ -1,0 +1,189 @@
+* {
+    /* Reset default browser spacing */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* =====COLORS===== */
+    --color-primary: #084726;
+    --color-secondary: #41944a;
+    --color-background: #f2f6f8;
+    --color-text-primary: #000000;
+    --color-text-secondary: #515151;
+    --color-introduction: #ffffff;
+    --color-headerButtons: #dcffff;
+    --color-3filters: #d4d8da;
+    --color-border: #c8d1d9;
+
+    /* =====COLORS===== */
+}
+
+/*
+Primary colors are for the button and main content of the cards.
+Secondary Color is fo the sticky header.
+*/
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Adjust the 0.5 (50% opacity) up or down to change the darkness */
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    z-index: -99; /* Sits exactly one layer in front of the video (-100) */
+    pointer-events: none; /* Allows users to click elements through the overlay */
+}
+/* ------------------------------------------- (1) INTRO PAGE ------------------------------------------- */
+#backgroundIntro {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    object-fit: cover;
+}
+
+.navigationBars {
+    background-color: var(--color-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: clamp(12px, 2vw, 16px) clamp(16px, 4vw, 36px);
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 12px;
+    position: sticky;
+}
+
+.brand-title {
+    color: var(--color-introduction);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+
+.headerButton {
+    background-color: var(--color-headerButtons); /* Light icy cyan/white */
+    color: var(--color-primary);
+    text-decoration: none;
+    font-size: clamp(13px, 1.5vw, 18px);
+    font-weight: 700;
+    padding: 10px 22px;
+    height: 44px;
+    border-radius: 50px; /* Creates the pill shape */
+    display: flex;
+    margin: 0 10px;
+    text-align: center;
+    line-height: 1.25;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.headerButton:hover {
+    background-color: #B2EBF2;
+}
+
+.introduction {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  width: 100%;
+  background-image: 
+    linear-gradient(rgba(15, 42, 29, 0.55), rgba(15, 42, 29, 0.45)),
+    url('assets/images/BackgroundIntro.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 64px 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.introduction-content {
+    color: var(--color-introduction);
+    width: 100%;
+    max-width: 100%;
+}
+
+.introduction-content h1 {
+    font-size: clamp(34px, 6.2vw, 96px);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 24px;
+    white-space: nowrap;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.introduction-content p {
+    font-size: clamp(20px, 4vw, 58px);
+    max-width: 100%;
+    font-weight: 400;
+    line-height: 1.35;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+.introduction-button {
+    position: absolute;
+    bottom: clamp(20px, 3vw, 28px);
+    right: clamp(20px, 3vw, 28px);
+    background: linear-gradient(#00a651, #8dc63f);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: clamp(18px, 2.5vw, 32px);
+    font-weight: 500;
+    padding: clamp(12px, 2vw, 18px) clamp(24px, 3vw, 34px);
+    border-radius: 50px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+/* ==========MOBILE ADJUSTMENTS========== */
+@media (max-width: 768px) {
+    .navigationBars {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 14px 16px;
+    }
+
+    .headerButton {
+        margin: 4px;
+    }
+
+    .introduction {
+        justify-content: space-between;
+        padding-bottom: 32px;
+    }
+
+    /* Prevents the button from overlapping text on short phone screens */
+    .introduction-button {
+        position: static;
+        align-self: center;
+        margin-top: 40px;
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+}
