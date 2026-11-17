@@ -37,23 +37,24 @@ body::after {
 /* ===== SLEEK TWO-ROW FLOATING FILTER CARD ===== */
 .filter-wrapper {
     background-color: var(--color-background);
-    padding: 0 24px 12px;
-    margin-top: -36px;
+    padding: 0 24px;
     position: relative;
     z-index: 10;
 }
 
 .filter-container {
     max-width: 1200px;
-    margin: -36px auto 0 auto; /* Pulls only the white card up over the green hero */
+    margin: 0 auto;
+    transform: translateY(-20%); /* Shifts half the card up into the green hero */
+    margin-bottom: -45px;          /* Closes the empty space left behind below the card */
     background-color: #ffffff;
     padding: 24px 28px;
-    border-radius: 16px;
+    border-radius: 20px;
     border: 1px solid var(--color-border);
     box-shadow: 0 12px 30px rgba(8, 71, 38, 0.12);
     display: flex;
     flex-direction: column;
-    gap: 18px;  
+    gap: 18px;
 }
 
 .filter-top-row {

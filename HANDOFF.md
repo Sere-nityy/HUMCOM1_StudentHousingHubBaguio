@@ -108,4 +108,11 @@ Image 1 About Us https://share.google/MmoPtiBspfExsuTuE
 Image 2 About Us https://share.google/zQvi4gtf70qiKTWSG
 Image 3 About Us https://share.google/k32FwiHWtCkYLcQXS
 
+Listing 1: Private Attic Room https://share.google/MCg2u1RHqkVQzV0zD
+Listing 2: Whole Quad-Dorm Room (Barkada Unit) https://share.google/jqKmGW0chFkTfVIJw 
+Listing 3: Male Bedspace Slots Available https://share.google/YrMXmu3UNRcENsz5E
+Listing 4: Solo Studio Apartment Unit https://share.google/QYxUepXJzhf0MYQvO
+Listing 5: Twin Sharing Room for Female Students https://share.google/BAPVXQHf0cUGwSceT
+Listing 6: Cozy Private Room with Balcony https://share.google/17fazEdw4Bon2wfzm
+
 - [Website, article, or tool you used: Author. (Year). Title. Link]
