@@ -64,14 +64,17 @@ body::after {
     flex-wrap: wrap;
     gap: 12px;
     position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.brand-title {
+.brand-title h1 {
     color: var(--color-introduction);
-    font-size: 24px;
+    font-size: clamp(20px, 2.5vw, 28px);
     font-weight: 700;
     letter-spacing: 0.3px;
 }
+
 
 .nav-buttons {
     display: flex;
@@ -83,21 +86,19 @@ body::after {
 
 
 .headerButton {
-    background-color: var(--color-headerButtons); /* Light icy cyan/white */
+    background-color: var(--color-headerButtons);
     color: var(--color-primary);
     text-decoration: none;
     font-size: clamp(13px, 1.5vw, 18px);
     font-weight: 700;
-    padding: 10px 22px;
-    height: 44px;
-    border-radius: 50px; /* Creates the pill shape */
-    display: flex;
-    margin: 0 10px;
-    text-align: center;
-    line-height: 1.25;
+    padding: 10px 20px;
+    min-height: 44px;
+    border-radius: 50px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    line-height: 1.25;
     white-space: nowrap;
     transition: background-color 0.2s ease, transform 0.1s ease;
 }
@@ -128,11 +129,11 @@ body::after {
 }
 
 .introduction-content h1 {
-    font-size: clamp(34px, 6.2vw, 96px);
+    font-size: clamp(32px, 6.2vw, 96px);
     font-weight: 700;
     line-height: 1.15;
-    margin-bottom: 24px;
-    white-space: nowrap;
+    margin-bottom: 16px;
+    overflow-wrap: break-word;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
@@ -165,25 +166,58 @@ body::after {
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        padding: 14px 16px;
+        padding: 10px 12px;
+        gap: 8px;
+    }
+
+    .brand-title h1 {
+        font-size: 20px;
+    }
+
+    /* Keeps all 3 buttons cleanly aligned on one row or compact grid */
+    .nav-buttons {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+        gap: 6px;
     }
 
     .headerButton {
-        margin: 4px;
+        padding: 6px 10px;
+        min-height: 34px;
+        font-size: 11.5px;
+        margin: 0;
+        flex: 1; /* Makes buttons share available width evenly */
+        white-space: normal; /* Allows "List Property (Landlords)" to fit neatly */
+        line-height: 1.15;
     }
 
+    /* Adjusts height for the taller stacked mobile header (~95px) */
     .introduction {
+        min-height: calc(100vh - 96px);
+        padding: 32px 20px 24px;
         justify-content: space-between;
-        padding-bottom: 32px;
+        text-align: center;
     }
 
-    /* Prevents the button from overlapping text on short phone screens */
+    .introduction-content h1 {
+        font-size: clamp(28px, 8vw, 42px);
+        margin-bottom: 14px;
+    }
+
+    .introduction-content p {
+        font-size: clamp(16px, 4.5vw, 22px);
+    }
+
     .introduction-button {
         position: static;
         align-self: center;
-        margin-top: 40px;
+        margin-top: 24px;
         width: 100%;
-        max-width: 320px;
+        max-width: 280px;
+        padding: 14px 24px;
+        font-size: 18px;
         text-align: center;
     }
 }
