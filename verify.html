@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Verification & Inquiry - StudentHousingHub Baguio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="verify.css">
+</head>
+<body>
+
+  <header class="navigationBars">
+    <div class="brand-title">
+      <h1><a href="index.html" class="brand-link">StudentHousingHub Baguio</a></h1>
+    </div>
+
+    <nav class="nav-buttons" aria-label="Primary Navigation">
+      <a href="rooms.html" class="headerButton">Find Rooms</a>
+      <a href="register-property.html" class="headerButton">List Property (Landlords)</a>
+      <a href="support.html" class="headerButton">Support</a>
+    </nav>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="form-container">
+      <a href="rooms.html" class="back-link">← Back to Verified Rooms</a>
+
+      <div class="form-header">
+        <h2>Secure Housing Application Form</h2>
+        <p class="subtitle">Complete your inquiry details below. We segregate student data layers to preserve university network privacy.</p>
+      </div>
+
+      <!-- SELECTED ROOM BANNER -->
+      <div class="selected-room-banner hidden" id="roomBanner">
+        <div>
+          <small id="roomBadgeLabel">Selected Property</small>
+          <strong id="selectedRoomTitle"></strong>
+          <button type="button" id="changeRoomBtn" class="change-room-btn">Change Room</button>
+        </div>
+        <span class="selected-room-price" id="selectedRoomPrice"></span>
+      </div>
+
+      <!-- LIVE ROOM SEARCH PICKER -->
+      <div class="room-picker-box" id="roomPickerBox">
+        <label for="roomSearchInput">🔍 Search &amp; Select Target Room</label>
+        <input type="text" id="roomSearchInput" placeholder="Type room name, street, or university (e.g. Bonifacio, SLU, Solo)...">
+        <div class="room-search-results" id="roomSearchResults"></div>
+      </div>
+
+      <!-- 3-STEP APPROVAL FLOW -->
+      <div class="approval-steps" aria-label="Application Process">
+        <div class="approval-step active-step">
+          <span>Step 1 (Now)</span>
+          Submit Free Inquiry
+        </div>
+        <div class="approval-step">
+          <span>Step 2</span>
+          Landlord Acceptance
+        </div>
+        <div class="approval-step">
+          <span>Step 3</span>
+          Pay &amp; Move In
+        </div>
+      </div>
+
+      <!-- PAYMENT PROTECTION NOTICE -->
+      <div class="payment-shield-box">
+        <strong>🛡️ No Upfront Payment Policy (₱0 Due Today)</strong>
+        <p>You will <strong>not</strong> be asked to pay any reservation fee, advance, or deposit right now. Payment is made <strong>only after the landlord formally accepts your inquiry</strong> and confirms room availability.</p>
+      </div>
+      <form id="inquiryForm">
+        <!-- HIDDEN DYNAMIC LISTING FIELDS -->
+        <input type="hidden" id="targetRoomId" name="Room ID" value="">
+        <input type="hidden" id="targetRoomName" name="Target Listing" value="">
+        <input type="hidden" id="targetRoomPrice" name="Listed Price" value="">
+
+        <!-- SECTION 1: IDENTITY VERIFICATION (ADMIN ONLY) -->
+        <div class="form-section-title">1. Identity Verification (Admin Eyes Only)</div>
+        <span class="privacy-badge badge-private">🔒 Private: Landlords cannot access this field.</span>
+
+        <div class="form-group">
+          <label for="studentName">Full Name</label>
+          <input type="text" id="studentName" name="Student Name" placeholder="Juan Dela Cruz" required>
+        </div>
+
+        <div class="form-group">
+          <label for="eduEmail">School Email Address (.edu.ph)</label>
+          <input type="email" id="eduEmail" name="Admin Verification Email" placeholder="username@slu.edu.ph" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[eE][dD][uU]\.[pP][hH]$" title="Requires an institutional address ending with .edu.ph" required>
+          <span class="field-hint">Used strictly by admins to cross-check active local enrollment (SLU, UC, UB, UPB, BSU).</span>
+        </div>
+
+        <!-- SECTION 2: LANDLORD CONNECTION INFO (SHARED FIELDS) -->
+        <div class="form-section-title">2. Landlord Connection Info (Shared Fields)</div>
+        <span class="privacy-badge badge-shared">👥 Shared: Visible to both Admins and Landlords.</span>
+
+        <div class="form-group">
+          <label for="contactEmail">Preferred Contact Email</label>
+          <input type="email" id="contactEmail" name="Contact Email" placeholder="yourname@gmail.com" required>
+          <span class="field-hint">The landlord will use this address to notify you once your application is accepted.</span>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="tel" id="mobileNumber" name="Contact Number" placeholder="09171234567" pattern="^(09)\d{9}$" title="Must be an 11-digit Philippine mobile number starting with 09" required>
+          </div>
+          <div class="form-group">
+            <label for="groupSize">Boarders Count</label>
+            <select id="groupSize" name="Group Size">
+              <option>1 (Solo Applicant)</option>
+              <option>2 (Moving with a roommate)</option>
+              <option>3-4 (Moving with barkada)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="moveInDate">Target Move-In Date</label>
+            <input type="date" id="moveInDate" name="Target Move-In Date" required>
+          </div>
+          <div class="form-group">
+            <label for="viewingMode">Preferred Viewing Mode</label>
+            <select id="viewingMode" name="Viewing Mode">
+              <option>In-Person Visit (Baguio)</option>
+              <option>Live Video Call Tour</option>
+              <option>Ready to Reserve Upon Acceptance</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="landlordMessage">Message to the Landlord</label>
+          <textarea id="landlordMessage" name="Landlord Message" placeholder="e.g., Hi! I would like to ask if cooking is allowed in the unit and if water utilities are included in the monthly rent? Thank you!"></textarea>
+          <span class="field-hint">Introduce yourself or include specific questions about amenities, curfews, or roommate names.</span>
+        </div>
+
+        <div class="consent-box">
+          <input type="checkbox" id="paymentConsent" required>
+          <label for="paymentConsent">
+            I understand that submitting this inquiry is <strong>free</strong>, and I will <strong>only proceed with payment once the landlord accepts my application</strong>.
+          </label>
+        </div>
+
+        <button type="submit" id="submitBtn" class="submit-btn">Submit Free Inquiry Packet</button>
+      </form>
+
+      <div class="confirmation-box hidden" id="confirmationBox" role="status">
+        <h3>✓ Inquiry Packet Submitted for Landlord Review!</h3>
+        <p id="confirmationSummary"></p>
+        <a href="rooms.html" class="back-link">← Return to Verified Rooms</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>Baguio<span>HousingHub</span></h2>
+        <p>Verified, scam-free student housing catalog in Baguio City. Helping SLU, UC, and UB students find safe rooms with transparent landlord access.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Platform Links">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="rooms.html">Find Verified Rooms</a></li>
+          <li><a href="verify.html">Student Verification</a></li>
+          <li><a href="register-property.html">List Property (Landlords)</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Help and Safety Links">
+        <h4>Help &amp; Safety</h4>
+        <ul>
+          <li><a href="support.html">Support &amp; FAQ Center</a></li>
+          <li><a href="support.html#errorGuideSection">Website Error Guide</a></li>
+          <li><a href="support.html#ticketFormSection">Report a Scam / Listing</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <small>&copy; 2026 BaguioHousingHub. All rights reserved.</small>
+      <address class="footer-address">📍 Baguio City, Benguet, Philippines</address>
+    </div>
+  </footer>
+
+  <script src="verify.js"></script>
+</body>
+</html>
