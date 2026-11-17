@@ -103,4 +103,9 @@ November 12 2026
 
 ## 7. Sources and Credits
 
+References:
+Image 1 About Us https://share.google/MmoPtiBspfExsuTuE
+Image 2 About Us https://share.google/zQvi4gtf70qiKTWSG
+Image 3 About Us https://share.google/k32FwiHWtCkYLcQXS
+
 - [Website, article, or tool you used: Author. (Year). Title. Link]
