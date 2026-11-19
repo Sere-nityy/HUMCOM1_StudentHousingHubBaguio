@@ -55,7 +55,7 @@ body::after {
     z-index: -100;
     object-fit: cover;
 }
-
+/* ------------------------------------------- (1.1) HEADER PAGE ------------------------------------------- */
 .navigationBars {
     background-color: var(--color-secondary);
     display: flex;
@@ -77,13 +77,12 @@ body::after {
     letter-spacing: 0.3px;
 }
 
-
 .nav-buttons {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 10px; /* Slightly increased from 8px so the 3px glow borders never touch */
 }
 
 .headerButton {
@@ -103,60 +102,106 @@ body::after {
     line-height: 1.25;
     white-space: nowrap;
     outline: none;
-    transition: background-color 0.2s ease, transform 0.1s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: color 0.25s ease, transform 0.15s ease, box-shadow 0.2s ease;
     z-index: 0;
     cursor: pointer;
+    user-select: none;
 }
 
 .headerButton::before {
     content: "";
     position: absolute;
-    /* Repeating #bdecff at the end makes the animation loop smoothly */
-    background: linear-gradient(45deg, #00c6ff, #2800a0, #0072ff, #00c6ff);
-    top: -3px;
-    left: -3px;
-    width: calc(100% + 6px);
-    height: calc(100% + 6px);
-    background-size: 400%;
-    z-index: -2; /* Placed behind ::after */
-    transition: opacity 0.3s ease-in-out;
-    animation: glowing 10s linear infinite;
+    inset: -3px;
+    background: linear-gradient(45deg, #00a651, #8dc63f, #d8f632, #00a651);
+    background-size: 300% 300%;
+    z-index: -2;
     border-radius: 50px;
     opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    animation: glowing 4s linear infinite;
+    animation-play-state: paused;
 }
 
 .headerButton::after {
     content: "";
-    z-index: -1;
     position: absolute;
-    width: 100%;
-    height: 100%;
+    inset: 0;
+    z-index: -1;
     background-color: var(--color-headerButtons);
-    top: 0px;
-    left: 0px;
     border-radius: 50px;
+    transition: background-color 0.25s ease;
 }
 
-.headerButton:hover::before {
+/* Current Page State (.active or aria-current="page"): Permanently inverted */
+.headerButton.active,
+.headerButton[aria-current="page"] {
+    color: var(--color-headerButtons); /* Swap to #FFFFFF if --color-headerButtons is translucent */
+    box-shadow: 0 3px 10px rgba(0, 166, 81, 0.2);
+}
+
+.headerButton.active::after,
+.headerButton[aria-current="page"]::after {
+    background-color: var(--color-primary);
+}
+
+/* Shows a clean static emerald-lime border ring on the current page without constant spinning */
+.headerButton.active::before,
+.headerButton[aria-current="page"]::before {
+    opacity: 0.85;
+}
+
+/* Hover & Keyboard Focus: Inverted + Lifted + Animated Glow */
+.headerButton:hover,
+.headerButton:focus-visible {
+    color: var(--color-headerButtons);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 166, 81, 0.25);
+}
+
+.headerButton:hover::after,
+.headerButton:focus-visible::after {
+    background-color: var(--color-primary);
+}
+
+.headerButton:hover::before,
+.headerButton:focus-visible::before {
     opacity: 1;
+    animation-play-state: running;
+}
+
+/* Click / Active Press */
+.headerButton:active {
+    transform: translateY(1px) scale(0.98);
 }
 
 .headerButton:active::after {
-    background: var(--color-headerButtonsClick);
+    background-color: var(--color-headerButtonsClick);
 }
 
 @keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
+    0% { background-position: 0% 50%; }
+    100% { background-position: 300% 50%; }
 }
 
+
+/* ------------------------------------------- (1.2) INTRO PAGE ------------------------------------------- */
 
 .introduction {
   position: relative;
   min-height: calc(100vh - 76px);
   width: 100%;
   background-image: 
+    /* Eased 7-stop fade: eliminates hard start/stop lines */
+    linear-gradient(
+      to bottom,
+      transparent 78%,
+      color-mix(in srgb, var(--color-background) 8%, transparent) 84%,
+      color-mix(in srgb, var(--color-background) 25%, transparent) 89%,
+      color-mix(in srgb, var(--color-background) 55%, transparent) 93%,
+      color-mix(in srgb, var(--color-background) 85%, transparent) 97%,
+      var(--color-background) 100%
+    ),
     linear-gradient(rgba(15, 42, 29, 0.55), rgba(15, 42, 29, 0.45)),
     url('assets/images/BackgroundIntro.jpg');
   background-size: cover;
@@ -166,6 +211,8 @@ body::after {
   flex-direction: column;
   justify-content: flex-start;
 }
+
+
 
 .introduction-content {
     color: var(--color-introduction);
@@ -192,8 +239,8 @@ body::after {
 
 .introduction-button {
     position: absolute;
-    bottom: clamp(20px, 3vw, 28px);
-    right: clamp(20px, 3vw, 28px);
+    bottom: clamp(48px, 6vw, 72px); /* Raised from 20px–28px so it sits above the bottom fade */
+    right: clamp(24px, 4vw, 48px);  /* Optional: slightly balanced right margin to match */
     color: #FFFFFF;
     text-decoration: none;
     font-size: clamp(18px, 2.5vw, 32px);
@@ -202,8 +249,9 @@ body::after {
     border-radius: 50px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
     transition: background-color 0.2s ease, transform 0.15s ease;
-    z-index: 0; 
+    z-index: 0;
 }
+
 
 .introduction-button::before {
     --angle: 0deg;
@@ -218,13 +266,42 @@ body::after {
     animation: 2s spin linear infinite;
 }
 
+@property --btn-top {
+    syntax: "<color>";
+    initial-value: #00a651;
+    inherits: false;
+}
+
+@property --btn-bottom {
+    syntax: "<color>";
+    initial-value: #8dc63f;
+    inherits: false;
+}
+
 .introduction-button::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(#058c46, #97d83c);
+    background: linear-gradient(var(--btn-top), var(--btn-bottom));
     border-radius: 50px;
     z-index: -1;
+    transition: --btn-top 0.3s ease, --btn-bottom 0.3s ease;
+}
+
+.introduction-button:hover::after {
+    --btn-top: #007a3d;
+    --btn-bottom: #4e9a26;
+}
+
+.introduction-button:active::after {
+    --btn-top: #005c2e;
+    --btn-bottom: #3b781b;
+}
+
+.introduction-button:hover::before {
+    background-image: conic-gradient(from var(--angle), #00800000, #75fb6c);
+    opacity: 1;
+    filter: blur(0.1rem);
 }
 
 @property --angle {
@@ -631,6 +708,7 @@ footer {
         right: auto;
         align-self: center;
         margin-top: 24px;
+        margin-bottom: 48px; /* Lifts the button cleanly above the bottom white fade */
         width: 100%;
         max-width: 280px;
         padding: 14px 24px;
