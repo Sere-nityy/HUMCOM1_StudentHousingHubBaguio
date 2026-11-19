@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support &amp; Safety Center - StudentHousingHub Baguio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="support.css">
+</head>
+<body>
+
+  <header class="navigationBars">
+    <div class="brand-title">
+      <h1><a href="index.html" class="brand-link">StudentHousingHub Baguio</a></h1>
+    </div>
+
+    <nav class="nav-buttons" aria-label="Primary Navigation">
+      <a href="index.html" class="headerButton">Home</a>
+      <a href="rooms.html" class="headerButton">Find Rooms</a>
+      <a href="register-property.html" class="headerButton">List Property (Landlords)</a>
+      <a href="support.html" class="headerButton active" aria-current="page">Support</a>
+    </nav>
+  </header>
+
+  <section class="support-hero">
+    <h2>Student &amp; Landlord Support Center</h2>
+    <p>Need help verifying a room near SLU, UC, UB, or UPB? Learn how our admin checks work, review our Baguio ocular safety checklist, or report suspicious activity.</p>
+  </section>
+
+  <main class="support-wrapper">
+    <!-- QUICK ACTION CARDS -->
+    <section class="quick-actions-grid" aria-label="Quick Support Actions">
+      <article class="action-card">
+        <div class="action-icon">🛡️</div>
+        <h3>Student Verification</h3>
+        <p>Learn why clicking "Inquire Now" routes to our institutional <code>.edu.ph</code> verification step with ₱0 upfront payment.</p>
+        <a href="verify.html" class="card-link">Go to Verification Portal →</a>
+      </article>
+
+      <article class="action-card">
+        <div class="action-icon">🏠</div>
+        <h3>Landlord Onboarding</h3>
+        <p>Own a boarding house or apartment in Baguio? Submit your permits and 4 room photos to earn the ✓ Verified badge.</p>
+        <a href="register-property.html" class="card-link">Register Your Property →</a>
+      </article>
+
+      <article class="action-card urgent-card">
+        <div class="action-icon">🚨</div>
+        <h3>Report a Suspicious Listing</h3>
+        <p>Did someone ask for an upfront GCash deposit before an ocular visit? Flag the listing immediately for admin action.</p>
+        <a href="#ticketFormSection" class="card-link urgent-link">Submit Urgent Report ↓</a>
+      </article>
+    </section>
+
+    <!-- BAGUIO TENANT OCULAR SAFETY CHECKLIST -->
+    <section class="safety-checklist-box" aria-labelledby="safetyChecklistHeading">
+      <div class="section-header-row">
+        <div>
+          <span class="section-eyebrow">Baguio City Student Guide</span>
+          <h3 id="safetyChecklistHeading">Ocular Visit &amp; Rental Safety Checklist</h3>
+        </div>
+        <span class="safety-badge">✓ Recommended Before Paying</span>
+      </div>
+
+      <div class="checklist-columns">
+        <div class="checklist-item">
+          <strong>1. Inspect Water &amp; Rainy-Season Readiness</strong>
+          <p>Check water tank pressure during peak morning hours and inspect ceilings/walls for dampness or mold common during Baguio's wet months.</p>
+        </div>
+        <div class="checklist-item">
+          <strong>2. Verify Landlord Identity &amp; Caretaker</strong>
+          <p>Confirm you are speaking with the registered owner or authorized caretaker listed on our verified record before signing any agreement.</p>
+        </div>
+        <div class="checklist-item">
+          <strong>3. Clarify Sub-Metering &amp; Curfew Terms</strong>
+          <p>Ask for exact electricity/water computation rules, visitor hours, and gate lockout times in writing before handing over advance rent.</p>
+        </div>
+        <div class="checklist-item">
+          <strong>4. Zero Advance Payment Without Viewing</strong>
+          <p>Never send reservation fees via GCash or bank transfer before visiting the room in person or completing a verified live video tour.</p>
+        </div>
+      </div>
+    </section>
+    <!-- SEARCHABLE & FILTERABLE FAQ SECTION -->
+    <section class="faq-section" aria-labelledby="faqHeading">
+      <div class="faq-top-bar">
+        <h3 id="faqHeading">Frequently Asked Questions</h3>
+        <div class="faq-search-wrap">
+          <input type="text" id="faqSearchInput" placeholder="Search FAQs (e.g. GCash, .edu.ph, curfew, per head)...">
+        </div>
+      </div>
+
+      <div class="faq-tabs" role="tablist" aria-label="FAQ Categories">
+        <button type="button" class="faq-tab active" data-category="all">All Topics</button>
+        <button type="button" class="faq-tab" data-category="students">For Students</button>
+        <button type="button" class="faq-tab" data-category="landlords">For Landlords</button>
+        <button type="button" class="faq-tab" data-category="scam">Scam Prevention</button>
+      </div>
+
+      <div class="faq-list" id="faqList">
+        <div class="faq-item" data-category="students">
+          <button type="button" class="faq-question">
+            <span>Why do I need to verify with my .edu.ph email before inquiring?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>To protect Baguio landlords from spam and protect students from fake bookings, we verify active local enrollment using your institutional <strong>.edu.ph</strong> email on <strong>verify.html</strong>. Your school email is seen by admins only—never shared with landlords—and once the landlord accepts your free inquiry, they contact you via your preferred email.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="students scam">
+          <button type="button" class="faq-question">
+            <span>What does the "Last checked and updated by admin" timestamp mean?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Every room card displays a green status dot showing the exact date our local Baguio admin team confirmed slot availability, current monthly rates, and tenant restrictions directly with the property owner.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="scam students">
+          <button type="button" class="faq-question">
+            <span>Should I pay a reservation fee via GCash before viewing a room?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Never send money before inspecting the property in person.</strong> Under our No Upfront Payment Policy (₱0 Due Today), payment happens only after a landlord formally accepts your inquiry and you have verified the unit via an ocular visit or live video tour.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="students">
+          <button type="button" class="faq-question">
+            <span>What is the difference between "Fixed" and "Per Head" pricing?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p><strong>Per head</strong> (e.g., ₱3,200/month per head) means you only pay for your own bedspace slot. <strong>Fixed</strong> (e.g., ₱12,000/month fixed for a Quad-Dorm) is the total rent for the entire room, which your group splits equally.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" data-category="landlords">
+          <button type="button" class="faq-question">
+            <span>How do I get my boarding house listed as Verified?</span>
+            <span class="faq-toggle">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Click <strong>List Property (Landlords)</strong> in the top menu to submit your property details, 4 room photos, and Baguio City Business Permit / Barangay Clearance. Your legal documents remain strictly isolated for admin eyes only, and on-site verification typically takes 24 to 48 hours.</p>
+          </div>
+        </div>
+      </div>
+
+      <p id="faqEmptyState" class="faq-empty hidden">No matching questions found. Try another keyword or submit a ticket below.</p>
+    </section>
+
+    <!-- SUPPORT TICKET & REPORT FORM -->
+    <section class="ticket-section" id="ticketFormSection" aria-labelledby="ticketHeading">
+      <div class="ticket-header">
+        <h3 id="ticketHeading">Submit a Support Ticket or Urgent Report</h3>
+        <p>Reach out directly to our BaguioHousingHub admin team for scam reports, occupied room updates, or technical errors.</p>
+      </div>
+
+      <form id="supportTicketForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="userRole">I am a...</label>
+            <select id="userRole" name="User Role" required>
+              <option value="Student / Parent">Student / Parent Looking for a Room</option>
+              <option value="Property Owner / Caretaker">Property Owner / Caretaker</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="issueCategory">Issue Category</label>
+            <select id="issueCategory" name="Issue Category" required>
+              <option value="Report Suspicious Listing / Scam Attempt">🚨 Report Suspicious Listing / Scam Attempt</option>
+              <option value="Report Already Occupied Room">📅 Report Already Occupied Room</option>
+              <option value="Report a Website Error / Broken Link">⚠️ Report a Website Error / Broken Link</option>
+              <option value="Help with Student Verification">🛡️ Help with Student Verification (verify.html)</option>
+              <option value="Update Listing Availability / Price">🏠 Update Listing Availability / Price</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="reporterName">Your Full Name</label>
+            <input type="text" id="reporterName" name="Reporter Name" placeholder="e.g., Juan Dela Cruz" required>
+          </div>
+
+          <div class="form-group">
+            <label for="reporterContact">Email Address or Mobile Number</label>
+            <input type="text" id="reporterContact" name="Reporter Contact" placeholder="e.g., juan@slu.edu.ph or 09171234567" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="listingRef">Listing Name or Error Code (Optional)</label>
+          <input type="text" id="listingRef" name="Listing Reference" placeholder="e.g., Private Attic Solo Room (#1) or Error 403">
+        </div>
+
+        <div class="form-group">
+          <label for="ticketDetails">Details</label>
+          <textarea id="ticketDetails" name="Ticket Details" placeholder="Describe what happened, include dates, street names, or details about the listing..." required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="evidenceFile">Attach Screenshot / Proof (Optional)</label>
+          <input type="file" id="evidenceFile" name="Evidence File" accept="image/*,.pdf">
+          <span class="field-hint">Helpful for scam chat screenshots, payment requests, or website error screens.</span>
+        </div>
+
+        <div class="anti-scam-banner">
+          <strong>⚠️ Anti-Scam Reminder:</strong> StudentHousingHub Baguio admins will <strong>never</strong> ask for your password, OTP, or GCash reservation deposits. Always inspect rooms around Baguio in person before paying.
+        </div>
+
+        <button type="submit" class="submit-btn">Send to BaguioHousingHub Admin</button>
+      </form>
+
+      <div id="ticketConfirmationBox" class="confirmation-box hidden" role="status">
+        <h3>✓ Support Ticket Logged (<span id="ticketRefCode"></span>)</h3>
+        <p id="ticketConfirmationText"></p>
+      </div>
+    </section>
+    <!-- BAGUIO LOCAL & CAMPUS HOTLINES -->
+    <section class="hotlines-section" aria-labelledby="hotlinesHeading">
+      <div class="section-header-row">
+        <div>
+          <span class="section-eyebrow">Local Assistance &amp; Emergencies</span>
+          <h3 id="hotlinesHeading">Baguio City &amp; University Student Contacts</h3>
+        </div>
+      </div>
+
+      <div class="hotlines-grid">
+        <div class="hotline-card">
+          <strong>🚓 Baguio City Police Office (BCPO)</strong>
+          <p>Emergency Hotline: <strong>emergency services</strong> or <strong>(074) 442-1211</strong></p>
+          <span>For urgent safety concerns, trespassing, or fraud incidents.</span>
+        </div>
+
+        <div class="hotline-card">
+          <strong>🏛️ Baguio City Permits &amp; Licensing</strong>
+          <p>City Hall Helpdesk: <strong>(074) 442-8932</strong></p>
+          <span>Verify official boarding house business permits in Baguio.</span>
+        </div>
+
+        <div class="hotline-card">
+          <strong>🎓 University Student Affairs (OSA)</strong>
+          <p><strong>SLU, UC, UB &amp; UP Baguio</strong></p>
+          <span>Contact your campus Student Affairs office for accredited dorm assistance.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMON WEBSITE ERRORS & WHAT THEY MEAN -->
+    <section class="error-guide-section" id="errorGuideSection" aria-labelledby="errorGuideHeading">
+      <div class="section-header-row">
+        <div>
+          <span class="section-eyebrow">System Troubleshooting</span>
+          <h3 id="errorGuideHeading">Common Website Errors &amp; What They Mean</h3>
+        </div>
+      </div>
+      <p class="section-subtext">If you run into a system notice while browsing rooms or submitting forms, check the guide below to understand what happened and how to fix it right away.</p>
+
+      <div class="error-cards-grid">
+        <article class="error-card">
+          <span class="error-badge badge-offline">📡 CONNECTION LOST</span>
+          <h4>Check Your Internet Connection</h4>
+          <p>Appears when your Wi-Fi or mobile data drops while loading live room filters or photos.</p>
+          <p class="error-fix"><strong>How to fix:</strong> Toggle Airplane Mode off/on, check mobile data signal, and refresh the page.</p>
+          <button type="button" class="preview-error-btn" data-error="offline">Preview Error Screen</button>
+        </article>
+
+        <article class="error-card">
+          <span class="error-badge badge-404">🔍 ERROR 404 • NOT FOUND</span>
+          <h4>Listing or Page Not Found</h4>
+          <p>Happens when a boarding house has already been occupied and removed by admins, or a link was mistyped.</p>
+          <p class="error-fix"><strong>How to fix:</strong> Head back to <strong>Find Rooms</strong> to view active verified listings near your school.</p>
+          <button type="button" class="preview-error-btn" data-error="404">Preview Error Screen</button>
+        </article>
+
+        <article class="error-card">
+          <span class="error-badge badge-403">🛡️ ERROR 403 • RESTRICTED</span>
+          <h4>Student Verification Required</h4>
+          <p>Shown if you try to submit an inquiry or access protected landlord details without a valid <code>.edu.ph</code> verification check.</p>
+          <p class="error-fix"><strong>How to fix:</strong> Complete the quick check on <strong>verify.html</strong> with browser cookies enabled.</p>
+          <button type="button" class="preview-error-btn" data-error="403">Preview Error Screen</button>
+        </article>
+
+        <article class="error-card">
+          <span class="error-badge badge-500">🛠️ ERROR 500 • SERVER ISSUE</span>
+          <h4>Temporary Database Sync</h4>
+          <p>Occurs briefly when admins are updating room availability timestamps or performing maintenance.</p>
+          <p class="error-fix"><strong>How to fix:</strong> Wait 30 seconds and refresh. Do not submit forms twice during a sync.</p>
+          <button type="button" class="preview-error-btn" data-error="500">Preview Error Screen</button>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- INTERACTIVE ERROR SCREEN PREVIEW MODAL -->
+  <div id="errorPreviewModal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalErrorTitle">
+    <div class="modal-box">
+      <div class="modal-top-row">
+        <span id="modalErrorCode" class="error-badge">CONNECTION LOST</span>
+        <button type="button" id="closeModalX" class="modal-close-x" aria-label="Close preview">✕</button>
+      </div>
+      <div id="modalErrorIcon" class="modal-big-icon">📡</div>
+      <h3 id="modalErrorTitle">Check Your Internet Connection</h3>
+      <p id="modalErrorDesc" class="modal-desc"></p>
+      <div class="modal-steps-box">
+        <strong>Recommended Steps:</strong>
+        <ul id="modalErrorSteps"></ul>
+      </div>
+      <button type="button" id="closeModalBtn" class="submit-btn">Got It, Close Preview</button>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>Baguio<span>HousingHub</span></h2>
+        <p>Verified, scam-free student housing catalog in Baguio City. Helping SLU, UC, and UB students find safe rooms with transparent landlord access.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Platform Links">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="rooms.html">Find Verified Rooms</a></li>
+          <li><a href="verify.html">Student Verification</a></li>
+          <li><a href="register-property.html">List Property (Landlords)</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Help and Safety Links">
+        <h4>Help &amp; Safety</h4>
+        <ul>
+          <li><a href="support.html">Support &amp; FAQ Center</a></li>
+          <li><a href="support.html#errorGuideSection">Website Error Guide</a></li>
+          <li><a href="support.html#ticketFormSection">Report a Scam / Listing</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <small>&copy; 2026 BaguioHousingHub. All rights reserved.</small>
+      <address class="footer-address">📍 Baguio City, Benguet, Philippines</address>
+    </div>
+  </footer>
+
+  <script src="support.js"></script>
+</body>
+</html>
