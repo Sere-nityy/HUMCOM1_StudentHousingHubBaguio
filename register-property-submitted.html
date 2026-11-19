@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listing Submitted - StudentHousingHub Baguio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="register-property.css">
+</head>
+<body>
+
+  <header class="navigationBars">
+    <div class="brand-title">
+      <h1><a href="index.html" class="brand-link">StudentHousingHub Baguio</a></h1>
+    </div>
+
+    <nav class="nav-buttons" aria-label="Primary Navigation">
+      <a href="index.html" class="headerButton">Home</a>
+      <a href="rooms.html" class="headerButton">Find Rooms</a>
+      <a href="register-property.html" class="headerButton active" aria-current="page">List Property (Landlords)</a>
+      <a href="support.html" class="headerButton">Support</a>
+    </nav>
+  </header>
+
+  <main class="page-wrapper">
+    <div class="form-container">
+      <!-- 3-STEP LANDLORD VERIFICATION FLOW (STEP 2 ACTIVE) -->
+      <div class="approval-steps" aria-label="Listing Verification Process">
+        <div class="approval-step">
+          <span>Step 1 (Done)</span>
+          Submit Property Details
+        </div>
+        <div class="approval-step active-step">
+          <span>Step 2 (Now)</span>
+          Admin &amp; Site Inspection
+        </div>
+        <div class="approval-step">
+          <span>Step 3</span>
+          Go Live on Directory
+        </div>
+      </div>
+
+      <div class="submitted-hero" role="status">
+        <div class="submitted-icon">✓</div>
+        <h2>Property Listed for Admin Verification!</h2>
+        <p class="subtitle">Your submission has been received and queued for municipal license review and on-site inspection in Baguio City.</p>
+      </div>
+      <div class="submitted-summary-card" id="submittedDetailsCard">
+        <div class="form-section-title" style="margin-top: 0;">Submitted Listing Summary</div>
+        <div id="listingSummaryContent" class="summary-details-list">
+          <p>Your property details and verification documents have been securely queued for admin review.</p>
+        </div>
+      </div>
+
+      <div class="payment-shield-box" style="margin-top: 20px;">
+        <strong>🔒 Admin Document Isolation Active</strong>
+        <p>Your Baguio City Business Permit, Barangay Clearance, and Government-Issued ID are strictly hidden from the public directory and accessible only to our verification team.</p>
+      </div>
+
+      <div class="submitted-actions">
+        <a href="rooms.html" class="submit-btn action-link-btn">View Verified Rooms Catalog</a>
+        <a href="register-property.html" class="secondary-action-btn">Submit Another Property</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h2>Baguio<span>HousingHub</span></h2>
+        <p>Verified, scam-free student housing catalog in Baguio City. Helping SLU, UC, and UB students find safe rooms with transparent landlord access.</p>
+      </div>
+
+      <nav class="footer-col" aria-label="Platform Links">
+        <h4>Platform</h4>
+        <ul>
+          <li><a href="rooms.html">Find Verified Rooms</a></li>
+          <li><a href="verify.html">Student Verification</a></li>
+          <li><a href="register-property.html">List Property (Landlords)</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Help and Safety Links">
+        <h4>Help &amp; Safety</h4>
+        <ul>
+          <li><a href="support.html">Support &amp; FAQ Center</a></li>
+          <li><a href="support.html#errorGuideSection">Website Error Guide</a></li>
+          <li><a href="support.html#ticketFormSection">Report a Scam / Listing</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <small>&copy; 2026 BaguioHousingHub. All rights reserved.</small>
+      <address class="footer-address">📍 Baguio City, Benguet, Philippines</address>
+    </div>
+  </footer>
+
+  <script src="register-property-submitted.js"></script>
+</body>
+</html>
