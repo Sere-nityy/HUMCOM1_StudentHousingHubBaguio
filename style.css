@@ -194,7 +194,6 @@ body::after {
     position: absolute;
     bottom: clamp(20px, 3vw, 28px);
     right: clamp(20px, 3vw, 28px);
-    background: linear-gradient(#00a651, #8dc63f);
     color: #FFFFFF;
     text-decoration: none;
     font-size: clamp(18px, 2.5vw, 32px);
@@ -203,6 +202,44 @@ body::after {
     border-radius: 50px;
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
     transition: background-color 0.2s ease, transform 0.15s ease;
+    z-index: 0; 
+}
+
+.introduction-button::before {
+    --angle: 0deg;
+    content: '';
+    position: absolute;
+    inset: -6px;
+    background-image: conic-gradient(from var(--angle), #00800000, #ffffff);
+    border-radius: 50px;
+    filter: blur(0.1rem);
+    opacity: 0.85;
+    z-index: -2; 
+    animation: 2s spin linear infinite;
+}
+
+.introduction-button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(#058c46, #97d83c);
+    border-radius: 50px;
+    z-index: -1;
+}
+
+@property --angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
 }
 
 /* ------------------------------------------- (2) ABOUT US PAGE ------------------------------------------- */
@@ -589,7 +626,9 @@ footer {
     }
 
     .introduction-button {
-        position: static;
+        position: relative;
+        bottom: auto;
+        right: auto;
         align-self: center;
         margin-top: 24px;
         width: 100%;
