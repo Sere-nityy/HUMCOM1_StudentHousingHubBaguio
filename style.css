@@ -14,6 +14,7 @@
     --color-text-secondary: #515151;
     --color-introduction: #ffffff;
     --color-headerButtons: #dcffff;
+    --color-headerButtonsClick: #83c3c3;
     --color-3filters: #d4d8da;
     --color-border: #c8d1d9;
 
@@ -85,8 +86,8 @@ body::after {
     gap: 8px;
 }
 
-
 .headerButton {
+    position: relative;
     background-color: var(--color-headerButtons);
     color: var(--color-primary);
     text-decoration: none;
@@ -101,12 +102,55 @@ body::after {
     text-align: center;
     line-height: 1.25;
     white-space: nowrap;
+    outline: none;
     transition: background-color 0.2s ease, transform 0.1s ease;
+    z-index: 0;
+    cursor: pointer;
 }
 
-.headerButton:hover {
-    background-color: #B2EBF2;
+.headerButton::before {
+    content: "";
+    position: absolute;
+    /* Repeating #bdecff at the end makes the animation loop smoothly */
+    background: linear-gradient(45deg, #00c6ff, #2800a0, #0072ff, #00c6ff);
+    top: -3px;
+    left: -3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    background-size: 400%;
+    z-index: -2; /* Placed behind ::after */
+    transition: opacity 0.3s ease-in-out;
+    animation: glowing 10s linear infinite;
+    border-radius: 50px;
+    opacity: 0;
 }
+
+.headerButton::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-headerButtons);
+    top: 0px;
+    left: 0px;
+    border-radius: 50px;
+}
+
+.headerButton:hover::before {
+    opacity: 1;
+}
+
+.headerButton:active::after {
+    background: var(--color-headerButtonsClick);
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
 
 .introduction {
   position: relative;
