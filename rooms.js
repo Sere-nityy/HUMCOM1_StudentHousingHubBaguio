@@ -276,17 +276,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentPhotoIndex = 0;
 
   function showGalleryPhoto(index) {
-  if (typeof resetImagePanZoom === "function") resetImagePanZoom();
-  if (!currentPhotos.length) return;
-  currentPhotoIndex = (index + currentPhotos.length) % currentPhotos.length;
+    if (typeof resetImagePanZoom === "function") resetImagePanZoom();
+    if (!currentPhotos.length) return;
+    currentPhotoIndex = (index + currentPhotos.length) % currentPhotos.length;
 
-  modalRoomImage.src = currentPhotos[currentPhotoIndex];
-  galleryCounter.textContent = `${currentPhotoIndex + 1} / ${currentPhotos.length}`;
+    modalRoomImage.src = currentPhotos[currentPhotoIndex];
+    galleryCounter.textContent = `${currentPhotoIndex + 1} / ${currentPhotos.length}`;
 
-  modalThumbnails.querySelectorAll(".modal-thumb-btn").forEach((btn, idx) => {
-    btn.classList.toggle("active", idx === currentPhotoIndex);
-  });
-}
+    modalThumbnails.querySelectorAll(".modal-thumb-btn").forEach((btn, idx) => {
+      btn.classList.toggle("active", idx === currentPhotoIndex);
+    });
+  }
 
   function loadRoomGallery(photoList, fallbackCardImg) {
     const safeFallback = fallbackCardImg || "assets/images/BackgroundIntro.jpg";
@@ -383,9 +383,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.key === "ArrowRight") showGalleryPhoto(currentPhotoIndex + 1);
   });
 
-    // ===== INTERACTIVE IMAGE PAN & ZOOM (INSPECT DETAILS) =====
-  const galleryMainFrame = document.getElementById('galleryMainFrame');
-  const zoomHintBadge = document.getElementById('zoomHintBadge');
+  // ===== INTERACTIVE IMAGE PAN & ZOOM (INSPECT DETAILS) =====
+  const galleryMainFrame = document.getElementById("galleryMainFrame");
+  const zoomHintBadge = document.getElementById("zoomHintBadge");
 
   let zoomScale = 1;
   let panX = 0;
@@ -401,8 +401,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (zoomScale <= 1) {
       panX = 0;
       panY = 0;
-      modalRoomImage.classList.remove('is-zoomed', 'is-dragging');
-      if (zoomHintBadge) zoomHintBadge.textContent = '🔍 Click image to zoom & drag';
+      modalRoomImage.classList.remove("is-zoomed", "is-dragging");
+      if (zoomHintBadge)
+        zoomHintBadge.textContent = "🔍 Click image to zoom & drag";
     } else {
       // Clamp pan so image edges stay inside the frame
       const maxX = (galleryMainFrame.clientWidth * (zoomScale - 1)) / 2;
@@ -410,8 +411,9 @@ document.addEventListener("DOMContentLoaded", () => {
       panX = Math.max(-maxX, Math.min(maxX, panX));
       panY = Math.max(-maxY, Math.min(maxY, panY));
 
-      modalRoomImage.classList.add('is-zoomed');
-      if (zoomHintBadge) zoomHintBadge.textContent = '✋ Drag to pan • Click to reset';
+      modalRoomImage.classList.add("is-zoomed");
+      if (zoomHintBadge)
+        zoomHintBadge.textContent = "✋ Drag to pan • Click to reset";
     }
 
     modalRoomImage.style.transform = `translate(${panX}px, ${panY}px) scale(${zoomScale})`;
@@ -427,7 +429,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Click to toggle zoom (2.2x)
-  modalRoomImage?.addEventListener('click', (e) => {
+  modalRoomImage?.addEventListener("click", (e) => {
     if (hasDragged) {
       hasDragged = false;
       return;
@@ -447,25 +449,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Mouse wheel zoom (optional smooth zoom between 1x and 3x)
-  galleryMainFrame?.addEventListener('wheel', (e) => {
-    e.preventDefault();
-    const delta = e.deltaY < 0 ? 0.35 : -0.35;
-    zoomScale = Math.max(1, Math.min(3, Number((zoomScale + delta).toFixed(2))));
-    applyImageTransform();
-  }, { passive: false });
+  galleryMainFrame?.addEventListener(
+    "wheel",
+    (e) => {
+      e.preventDefault();
+      const delta = e.deltaY < 0 ? 0.35 : -0.35;
+      zoomScale = Math.max(
+        1,
+        Math.min(3, Number((zoomScale + delta).toFixed(2))),
+      );
+      applyImageTransform();
+    },
+    { passive: false },
+  );
 
   // Drag to pan with cursor
-  modalRoomImage?.addEventListener('mousedown', (e) => {
+  modalRoomImage?.addEventListener("mousedown", (e) => {
     if (zoomScale <= 1) return;
     e.preventDefault();
     isDragging = true;
     hasDragged = false;
     startX = e.clientX - panX;
     startY = e.clientY - panY;
-    modalRoomImage.classList.add('is-dragging');
+    modalRoomImage.classList.add("is-dragging");
   });
 
-  window.addEventListener('mousemove', (e) => {
+  window.addEventListener("mousemove", (e) => {
     if (!isDragging) return;
     hasDragged = true;
     panX = e.clientX - startX;
@@ -473,10 +482,9 @@ document.addEventListener("DOMContentLoaded", () => {
     applyImageTransform();
   });
 
-  window.addEventListener('mouseup', () => {
+  window.addEventListener("mouseup", () => {
     if (!isDragging) return;
     isDragging = false;
-    modalRoomImage?.classList.remove('is-dragging');
+    modalRoomImage?.classList.remove("is-dragging");
   });
-
 });

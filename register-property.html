@@ -1,298 +1,497 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>List Your Property - StudentHousingHub Baguio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="register-property.css">
-</head>
-<body>
-
-  <header class="navigationBars">
-    <div class="brand-title">
-      <h1><a href="index.html" class="brand-link">StudentHousingHub Baguio</a></h1>
-    </div>
-
-    <nav class="nav-buttons" aria-label="Primary Navigation">
-      <a href="index.html" class="headerButton">Home</a>
-      <a href="rooms.html" class="headerButton">Find Rooms</a>
-      <a href="register-property.html" class="headerButton active" aria-current="page">List Property (Landlords)</a>
-      <a href="support.html" class="headerButton">Support</a>
-    </nav>
-  </header>
-
-  <main class="page-wrapper">
-    <div class="form-container">
-      <a href="rooms.html" class="back-link">← Back to Verified Rooms</a>
-
-      <div class="form-header">
-        <h2>List Your Student Housing</h2>
-        <p class="subtitle">Register your boarding house, apartment, or bedspace unit. All applications undergo official municipal license verification before going live on the directory.</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Your Property - StudentHousingHub Baguio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="register-property.css" />
+  </head>
+  <body>
+    <header class="navigationBars">
+      <div class="brand-title">
+        <h1>
+          <a href="index.html" class="brand-link">StudentHousingHub Baguio</a>
+        </h1>
       </div>
 
-      <!-- 3-STEP LANDLORD VERIFICATION FLOW -->
-      <div class="approval-steps" aria-label="Listing Verification Process">
-        <div class="approval-step active-step">
-          <span>Step 1 (Now)</span>
-          Submit Property Details
-        </div>
-        <div class="approval-step">
-          <span>Step 2</span>
-          Admin &amp; Site Inspection
-        </div>
-        <div class="approval-step">
-          <span>Step 3</span>
-          Go Live on Directory
-        </div>
-      </div>
-
-      <form id="propertyForm">
-        <!-- SECTION 1: PUBLIC CATALOG INFORMATION -->
-        <div class="form-section-title">1. Public Catalog Information</div>
-        <span class="privacy-badge badge-shared">👥 Public: Displayed on the verified student room directory.</span>
-
-        <div class="form-group">
-          <label for="landlordName">Landlord / Property Manager Full Name</label>
-          <input type="text" id="landlordName" name="Landlord Name" placeholder="e.g., Maria Clara Santos" required>
-        </div>
-
-        <div class="form-group">
-          <label for="listingTitle">Listing Title / Room Name</label>
-          <input type="text" id="listingTitle" name="Listing Title" placeholder="e.g., Private Attic Solo Room or Cozy Studio with Balcony" required>
-          <span class="field-hint">This headline appears at the top of your room card in the catalog.</span>
-        </div>
-
-        <div class="form-group">
-          <label for="propertyAddress">Property Address (Baguio City Barangay)</label>
-          <input type="text" id="propertyAddress" name="Property Address" placeholder="e.g., #42 Bonifacio Street, Brgy. Holy Ghost Proper, Baguio City" required>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="monthlyRent">Monthly Rent Price (PHP)</label>
-            <input type="number" id="monthlyRent" name="Monthly Rent" placeholder="e.g., 5500" min="500" step="50" required>
-          </div>
-
-          <div class="form-group">
-            <label for="rateType">Rate Basis</label>
-            <select id="rateType" name="Rate Type" required>
-              <option value="month">Per Month (Whole Room / Solo)</option>
-              <option value="head">Per Head (Bedspace / Shared)</option>
-              <option value="fixed">Per Month Fixed (Barkada Unit)</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="targetUniversity">Nearest Target University</label>
-            <select id="targetUniversity" name="Target University" required>
-              <option value="" disabled selected>Select University...</option>
-              <option value="slu">Saint Louis University (SLU)</option>
-              <option value="uc">University of the Cordilleras (UC)</option>
-              <option value="ub">University of Baguio (UB)</option>
-              <option value="upb">UP Baguio</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="campusDistance">Distance / Commute to Campus</label>
-            <input type="text" id="campusDistance" name="Campus Distance" placeholder="e.g., 5-min walk to SLU Main or 1 Jeepney Ride to UC" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="occupancyRestriction">Occupancy Restriction</label>
-            <select id="occupancyRestriction" name="Occupancy Restriction" required>
-              <option value="solo">🚫 Single Tenant Only (Solo Room)</option>
-              <option value="twin">👥 Max 2 Tenants (Twin Share)</option>
-              <option value="group">👨‍👩‍👦‍👦 Accommodates 2-4 Pax (Group/Barkada)</option>
-              <option value="bedspace">📶 Multiple Bedspace Slots Available</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="tenantGender">Tenant Gender Preference</label>
-            <select id="tenantGender" name="Tenant Gender" required>
-              <option value="coed">Co-ed / Any Gender</option>
-              <option value="female">Female Students Only</option>
-              <option value="male">Male Students Only</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="curfewPolicy">Curfew Policy</label>
-          <select id="curfewPolicy" name="Curfew Policy" required>
-            <option value="none">🔓 No Curfew Rules</option>
-            <option value="10pm">🔒 10:00 PM Gate Lockout</option>
-            <option value="9pm">🔒 Strict 9:00 PM Gate Lockout</option>
-          </select>
-        </div>
-        <!-- INCLUDED SPECIFICATIONS & AMENITIES -->
-        <div class="form-group">
-          <label>Select Included Specifications &amp; Amenities</label>
-          <span class="field-hint block-hint">Check all 9 metrics that apply to your accommodation room layout:</span>
-
-          <div class="checkbox-grid">
-            <label class="check-card">
-              <input type="checkbox" name="amenities" value="Shower Heater">
-              <span>🚿 Shower Heater</span>
-            </label>
-            <label class="check-card">
-              <input type="checkbox" name="amenities" value="Free Fiber Wi-Fi">
-              <span>📶 Free Fiber Wi-Fi</span>
-            </label>
-            <label class="check-card">
-              <input type="checkbox" name="amenities" value="High Natural Light">
-              <span>☀️ High Natural Light</span>
-            </label>
-            <label class="check-card">
-              <input type="checkbox" name="amenities" value="Cooking Allowed">
-              <span>🍳 Cooking Allowed</span>
-            </label>
-            <label class="check-card">
-              <input type="checkbox" name="amenities" value="Utilities Included">
-              <span>💡 Utilities Included</span>
-            </label>
-            <label class="check-card">
-              <input type="checkbox" name="amenities" value="Airing Balcony">
-              <span>🌅 Airing Balcony</span>
-            </label>
-            <label class="check-card">
-              <input type="checkbox" name="amenities" value="Laundry Area">
-              <span>🧺 Laundry Area</span>
-            </label>
-            <label class="check-card">
-              <input type="checkbox" name="amenities" value="Dedicated Study Desk">
-              <span>✍️ Dedicated Study Desk</span>
-            </label>
-            <label class="check-card">
-              <input type="checkbox" name="amenities" value="Overhead Water Tank">
-              <span>🪣 Overhead Water Tank</span>
-            </label>
-          </div>
-        </div>
-
-        <!-- HOUSE RESTRICTIONS & PROHIBITIONS -->
-        <div class="form-group">
-          <label>🚫 Select House Restrictions &amp; Prohibitions (The No's)</label>
-          <span class="field-hint block-hint">Check all negative constraints that apply to this property's house rules:</span>
-
-          <div class="checkbox-grid restrictions-grid">
-            <label class="check-card restriction-card">
-              <input type="checkbox" name="restrictions" value="No Cooking Allowed" id="restrictNoCooking">
-              <span>🍳 No Cooking Allowed</span>
-            </label>
-            <label class="check-card restriction-card">
-              <input type="checkbox" name="restrictions" value="No Pets Allowed">
-              <span>🐾 No Pets Allowed</span>
-            </label>
-            <label class="check-card restriction-card">
-              <input type="checkbox" name="restrictions" value="No Curfew Extension">
-              <span>🔒 No Curfew Extension</span>
-            </label>
-            <label class="check-card restriction-card">
-              <input type="checkbox" name="restrictions" value="No Overnight Guests">
-              <span>🚷 No Overnight Guests</span>
-            </label>
-            <label class="check-card restriction-card">
-              <input type="checkbox" name="restrictions" value="No Parking Space">
-              <span>🚗 No Parking Space</span>
-            </label>
-            <label class="check-card restriction-card">
-              <input type="checkbox" name="restrictions" value="No Smoking/Alcohol">
-              <span>🚭 No Smoking/Alcohol</span>
-            </label>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <div class="form-group">
-            <label for="landlordEmail">Contact Email Address</label>
-            <input type="email" id="landlordEmail" name="Contact Email" placeholder="landlord@gmail.com" required>
-          </div>
-
-          <div class="form-group">
-            <label for="landlordMobile">Contact Mobile Number</label>
-            <input type="tel" id="landlordMobile" name="Contact Mobile" placeholder="09171234567" pattern="^(09)\d{9}$" title="Must be an 11-digit Philippine mobile number starting with 09" required>
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="customRules">Additional House Rules / Custom Specifications</label>
-          <textarea id="customRules" name="Additional Rules" placeholder="e.g., 1 month advance, 1 month deposit. Visitors allowed in the common lobby until 8:00 PM only. Sub-metered electricity."></textarea>
-        </div>
-        <!-- 4 PHOTOS REQUIRED WITH LIVE PREVIEW -->
-        <div class="form-group">
-          <label for="galleryPhotos">Public Room Showcase Media Gallery (4 Photos Required)</label>
-          <div class="file-upload-box">
-            <input type="file" id="galleryPhotos" name="Gallery Photos" accept="image/*" multiple required>
-            <p class="upload-instruction">Please select <strong>4 high-resolution snapshots</strong> (e.g., room layout, sanitation areas, and property exterior).</p>
-            <span id="galleryPhotoCount" class="file-status-badge">0 of 4 photos selected</span>
-            <div id="photoPreviewGrid" class="photo-preview-grid hidden"></div>
-          </div>
-        </div>
-
-        <!-- SECTION 2: LEGAL VERIFICATION (ADMIN ONLY) -->
-        <div class="form-section-title">2. Legal Verification (Website Admin Only)</div>
-        <span class="privacy-badge badge-private">🔒 System Isolation: Documents uploaded here are hidden from the public directory.</span>
-
-        <div class="form-group">
-          <label for="legalDocs">Business Permit / Barangay Clearance &amp; Valid ID</label>
-          <div class="file-upload-box private-upload-box">
-            <input type="file" id="legalDocs" name="Legal Documents" accept=".pdf,.jpg,.jpeg,.png" multiple required>
-            <p class="upload-instruction">Upload your <strong>Baguio City Business Permit, Barangay Clearance, and Government-Issued ID</strong> for admin verification.</p>
-            <span id="legalDocStatus" class="file-status-badge">No verification documents attached</span>
-          </div>
-        </div>
-
-        <div class="consent-box">
-          <input type="checkbox" id="landlordConsent" required>
-          <label for="landlordConsent">
-            I certify that all property details, rent pricing, and permits submitted are accurate and authorize StudentHousingHub Baguio admins to conduct an on-site verification check.
-          </label>
-        </div>
-
-        <button type="submit" id="submitListingBtn" class="submit-btn">Submit Property Listing</button>
-      </form>
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2>Baguio<span>HousingHub</span></h2>
-        <p>Verified, scam-free student housing catalog in Baguio City. Helping SLU, UC, and UB students find safe rooms with transparent landlord access.</p>
-      </div>
-
-      <nav class="footer-col" aria-label="Platform Links">
-        <h4>Platform</h4>
-        <ul>
-          <li><a href="rooms.html">Find Verified Rooms</a></li>
-          <li><a href="verify.html">Student Verification</a></li>
-          <li><a href="register-property.html">List Property (Landlords)</a></li>
-        </ul>
+      <nav class="nav-buttons" aria-label="Primary Navigation">
+        <a href="index.html" class="headerButton">Home</a>
+        <a href="rooms.html" class="headerButton">Find Rooms</a>
+        <a
+          href="register-property.html"
+          class="headerButton active"
+          aria-current="page"
+          >List Property (Landlords)</a
+        >
+        <a href="support.html" class="headerButton">Support</a>
       </nav>
+    </header>
 
-      <nav class="footer-col" aria-label="Help and Safety Links">
-        <h4>Help &amp; Safety</h4>
-        <ul>
-          <li><a href="support.html">Support &amp; FAQ Center</a></li>
-          <li><a href="support.html#errorGuideSection">Website Error Guide</a></li>
-          <li><a href="support.html#ticketFormSection">Report a Scam / Listing</a></li>
-        </ul>
-      </nav>
-    </div>
+    <main class="page-wrapper">
+      <div class="form-container">
+        <a href="rooms.html" class="back-link">← Back to Verified Rooms</a>
 
-    <div class="footer-bottom">
-      <small>&copy; 2026 BaguioHousingHub. All rights reserved.</small>
-      <address class="footer-address">📍 Baguio City, Benguet, Philippines</address>
-    </div>
-  </footer>
+        <div class="form-header">
+          <h2>List Your Student Housing</h2>
+          <p class="subtitle">
+            Register your boarding house, apartment, or bedspace unit. All
+            applications undergo official municipal license verification before
+            going live on the directory.
+          </p>
+        </div>
 
-  <script src="register-property.js"></script>
-</body>
+        <!-- 3-STEP LANDLORD VERIFICATION FLOW -->
+        <div class="approval-steps" aria-label="Listing Verification Process">
+          <div class="approval-step active-step">
+            <span>Step 1 (Now)</span>
+            Submit Property Details
+          </div>
+          <div class="approval-step">
+            <span>Step 2</span>
+            Admin &amp; Site Inspection
+          </div>
+          <div class="approval-step">
+            <span>Step 3</span>
+            Go Live on Directory
+          </div>
+        </div>
+
+        <form id="propertyForm">
+          <!-- SECTION 1: PUBLIC CATALOG INFORMATION -->
+          <div class="form-section-title">1. Public Catalog Information</div>
+          <span class="privacy-badge badge-shared"
+            >👥 Public: Displayed on the verified student room directory.</span
+          >
+
+          <div class="form-group">
+            <label for="landlordName"
+              >Landlord / Property Manager Full Name</label
+            >
+            <input
+              type="text"
+              id="landlordName"
+              name="Landlord Name"
+              placeholder="e.g., Maria Clara Santos"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="listingTitle">Listing Title / Room Name</label>
+            <input
+              type="text"
+              id="listingTitle"
+              name="Listing Title"
+              placeholder="e.g., Private Attic Solo Room or Cozy Studio with Balcony"
+              required
+            />
+            <span class="field-hint"
+              >This headline appears at the top of your room card in the
+              catalog.</span
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="propertyAddress"
+              >Property Address (Baguio City Barangay)</label
+            >
+            <input
+              type="text"
+              id="propertyAddress"
+              name="Property Address"
+              placeholder="e.g., #42 Bonifacio Street, Brgy. Holy Ghost Proper, Baguio City"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="monthlyRent">Monthly Rent Price (PHP)</label>
+              <input
+                type="number"
+                id="monthlyRent"
+                name="Monthly Rent"
+                placeholder="e.g., 5500"
+                min="500"
+                step="50"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="rateType">Rate Basis</label>
+              <select id="rateType" name="Rate Type" required>
+                <option value="month">Per Month (Whole Room / Solo)</option>
+                <option value="head">Per Head (Bedspace / Shared)</option>
+                <option value="fixed">Per Month Fixed (Barkada Unit)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="targetUniversity">Nearest Target University</label>
+              <select id="targetUniversity" name="Target University" required>
+                <option value="" disabled selected>Select University...</option>
+                <option value="slu">Saint Louis University (SLU)</option>
+                <option value="uc">University of the Cordilleras (UC)</option>
+                <option value="ub">University of Baguio (UB)</option>
+                <option value="upb">UP Baguio</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="campusDistance">Distance / Commute to Campus</label>
+              <input
+                type="text"
+                id="campusDistance"
+                name="Campus Distance"
+                placeholder="e.g., 5-min walk to SLU Main or 1 Jeepney Ride to UC"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="occupancyRestriction">Occupancy Restriction</label>
+              <select
+                id="occupancyRestriction"
+                name="Occupancy Restriction"
+                required
+              >
+                <option value="solo">🚫 Single Tenant Only (Solo Room)</option>
+                <option value="twin">👥 Max 2 Tenants (Twin Share)</option>
+                <option value="group">
+                  👨‍👩‍👦‍👦 Accommodates 2-4 Pax (Group/Barkada)
+                </option>
+                <option value="bedspace">
+                  📶 Multiple Bedspace Slots Available
+                </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tenantGender">Tenant Gender Preference</label>
+              <select id="tenantGender" name="Tenant Gender" required>
+                <option value="coed">Co-ed / Any Gender</option>
+                <option value="female">Female Students Only</option>
+                <option value="male">Male Students Only</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="curfewPolicy">Curfew Policy</label>
+            <select id="curfewPolicy" name="Curfew Policy" required>
+              <option value="none">🔓 No Curfew Rules</option>
+              <option value="10pm">🔒 10:00 PM Gate Lockout</option>
+              <option value="9pm">🔒 Strict 9:00 PM Gate Lockout</option>
+            </select>
+          </div>
+          <!-- INCLUDED SPECIFICATIONS & AMENITIES -->
+          <div class="form-group">
+            <label>Select Included Specifications &amp; Amenities</label>
+            <span class="field-hint block-hint"
+              >Check all 9 metrics that apply to your accommodation room
+              layout:</span
+            >
+
+            <div class="checkbox-grid">
+              <label class="check-card">
+                <input type="checkbox" name="amenities" value="Shower Heater" />
+                <span>🚿 Shower Heater</span>
+              </label>
+              <label class="check-card">
+                <input
+                  type="checkbox"
+                  name="amenities"
+                  value="Free Fiber Wi-Fi"
+                />
+                <span>📶 Free Fiber Wi-Fi</span>
+              </label>
+              <label class="check-card">
+                <input
+                  type="checkbox"
+                  name="amenities"
+                  value="High Natural Light"
+                />
+                <span>☀️ High Natural Light</span>
+              </label>
+              <label class="check-card">
+                <input
+                  type="checkbox"
+                  name="amenities"
+                  value="Cooking Allowed"
+                />
+                <span>🍳 Cooking Allowed</span>
+              </label>
+              <label class="check-card">
+                <input
+                  type="checkbox"
+                  name="amenities"
+                  value="Utilities Included"
+                />
+                <span>💡 Utilities Included</span>
+              </label>
+              <label class="check-card">
+                <input
+                  type="checkbox"
+                  name="amenities"
+                  value="Airing Balcony"
+                />
+                <span>🌅 Airing Balcony</span>
+              </label>
+              <label class="check-card">
+                <input type="checkbox" name="amenities" value="Laundry Area" />
+                <span>🧺 Laundry Area</span>
+              </label>
+              <label class="check-card">
+                <input
+                  type="checkbox"
+                  name="amenities"
+                  value="Dedicated Study Desk"
+                />
+                <span>✍️ Dedicated Study Desk</span>
+              </label>
+              <label class="check-card">
+                <input
+                  type="checkbox"
+                  name="amenities"
+                  value="Overhead Water Tank"
+                />
+                <span>🪣 Overhead Water Tank</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- HOUSE RESTRICTIONS & PROHIBITIONS -->
+          <div class="form-group">
+            <label
+              >🚫 Select House Restrictions &amp; Prohibitions (The No's)</label
+            >
+            <span class="field-hint block-hint"
+              >Check all negative constraints that apply to this property's
+              house rules:</span
+            >
+
+            <div class="checkbox-grid restrictions-grid">
+              <label class="check-card restriction-card">
+                <input
+                  type="checkbox"
+                  name="restrictions"
+                  value="No Cooking Allowed"
+                  id="restrictNoCooking"
+                />
+                <span>🍳 No Cooking Allowed</span>
+              </label>
+              <label class="check-card restriction-card">
+                <input
+                  type="checkbox"
+                  name="restrictions"
+                  value="No Pets Allowed"
+                />
+                <span>🐾 No Pets Allowed</span>
+              </label>
+              <label class="check-card restriction-card">
+                <input
+                  type="checkbox"
+                  name="restrictions"
+                  value="No Curfew Extension"
+                />
+                <span>🔒 No Curfew Extension</span>
+              </label>
+              <label class="check-card restriction-card">
+                <input
+                  type="checkbox"
+                  name="restrictions"
+                  value="No Overnight Guests"
+                />
+                <span>🚷 No Overnight Guests</span>
+              </label>
+              <label class="check-card restriction-card">
+                <input
+                  type="checkbox"
+                  name="restrictions"
+                  value="No Parking Space"
+                />
+                <span>🚗 No Parking Space</span>
+              </label>
+              <label class="check-card restriction-card">
+                <input
+                  type="checkbox"
+                  name="restrictions"
+                  value="No Smoking/Alcohol"
+                />
+                <span>🚭 No Smoking/Alcohol</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="landlordEmail">Contact Email Address</label>
+              <input
+                type="email"
+                id="landlordEmail"
+                name="Contact Email"
+                placeholder="landlord@gmail.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="landlordMobile">Contact Mobile Number</label>
+              <input
+                type="tel"
+                id="landlordMobile"
+                name="Contact Mobile"
+                placeholder="09171234567"
+                pattern="^(09)\d{9}$"
+                title="Must be an 11-digit Philippine mobile number starting with 09"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="customRules"
+              >Additional House Rules / Custom Specifications</label
+            >
+            <textarea
+              id="customRules"
+              name="Additional Rules"
+              placeholder="e.g., 1 month advance, 1 month deposit. Visitors allowed in the common lobby until 8:00 PM only. Sub-metered electricity."
+            ></textarea>
+          </div>
+          <!-- 4 PHOTOS REQUIRED WITH LIVE PREVIEW -->
+          <div class="form-group">
+            <label for="galleryPhotos"
+              >Public Room Showcase Media Gallery (4 Photos Required)</label
+            >
+            <div class="file-upload-box">
+              <input
+                type="file"
+                id="galleryPhotos"
+                name="Gallery Photos"
+                accept="image/*"
+                multiple
+                required
+              />
+              <p class="upload-instruction">
+                Please select
+                <strong>4 high-resolution snapshots</strong> (e.g., room layout,
+                sanitation areas, and property exterior).
+              </p>
+              <span id="galleryPhotoCount" class="file-status-badge"
+                >0 of 4 photos selected</span
+              >
+              <div
+                id="photoPreviewGrid"
+                class="photo-preview-grid hidden"
+              ></div>
+            </div>
+          </div>
+
+          <!-- SECTION 2: LEGAL VERIFICATION (ADMIN ONLY) -->
+          <div class="form-section-title">
+            2. Legal Verification (Website Admin Only)
+          </div>
+          <span class="privacy-badge badge-private"
+            >🔒 System Isolation: Documents uploaded here are hidden from the
+            public directory.</span
+          >
+
+          <div class="form-group">
+            <label for="legalDocs"
+              >Business Permit / Barangay Clearance &amp; Valid ID</label
+            >
+            <div class="file-upload-box private-upload-box">
+              <input
+                type="file"
+                id="legalDocs"
+                name="Legal Documents"
+                accept=".pdf,.jpg,.jpeg,.png"
+                multiple
+                required
+              />
+              <p class="upload-instruction">
+                Upload your
+                <strong
+                  >Baguio City Business Permit, Barangay Clearance, and
+                  Government-Issued ID</strong
+                >
+                for admin verification.
+              </p>
+              <span id="legalDocStatus" class="file-status-badge"
+                >No verification documents attached</span
+              >
+            </div>
+          </div>
+
+          <div class="consent-box">
+            <input type="checkbox" id="landlordConsent" required />
+            <label for="landlordConsent">
+              I certify that all property details, rent pricing, and permits
+              submitted are accurate and authorize StudentHousingHub Baguio
+              admins to conduct an on-site verification check.
+            </label>
+          </div>
+
+          <button type="submit" id="submitListingBtn" class="submit-btn">
+            Submit Property Listing
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>Baguio<span>HousingHub</span></h2>
+          <p>
+            Verified, scam-free student housing catalog in Baguio City. Helping
+            SLU, UC, and UB students find safe rooms with transparent landlord
+            access.
+          </p>
+        </div>
+
+        <nav class="footer-col" aria-label="Platform Links">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="rooms.html">Find Verified Rooms</a></li>
+            <li><a href="verify.html">Student Verification</a></li>
+            <li>
+              <a href="register-property.html">List Property (Landlords)</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Help and Safety Links">
+          <h4>Help &amp; Safety</h4>
+          <ul>
+            <li><a href="support.html">Support &amp; FAQ Center</a></li>
+            <li>
+              <a href="support.html#errorGuideSection">Website Error Guide</a>
+            </li>
+            <li>
+              <a href="support.html#ticketFormSection"
+                >Report a Scam / Listing</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <small>&copy; 2026 BaguioHousingHub. All rights reserved.</small>
+        <address class="footer-address">
+          📍 Baguio City, Benguet, Philippines
+        </address>
+      </div>
+    </footer>
+
+    <script src="register-property.js"></script>
+  </body>
 </html>

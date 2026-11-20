@@ -1,6 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const summaryContainer = document.getElementById('listingSummaryContent');
-  const rawData = sessionStorage.getItem('submittedPropertyListing');
+document.addEventListener("DOMContentLoaded", () => {
+  const summaryContainer = document.getElementById("listingSummaryContent");
+  const rawData = sessionStorage.getItem("submittedPropertyListing");
 
   if (!rawData) {
     summaryContainer.innerHTML = `
@@ -11,13 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const data = JSON.parse(rawData);
 
-  const amenitiesText = data.amenities && data.amenities.length
-    ? data.amenities.join(', ')
-    : 'None selected';
+  const amenitiesText =
+    data.amenities && data.amenities.length
+      ? data.amenities.join(", ")
+      : "None selected";
 
-  const restrictionsText = data.restrictions && data.restrictions.length
-    ? data.restrictions.join(', ')
-    : 'None selected';
+  const restrictionsText =
+    data.restrictions && data.restrictions.length
+      ? data.restrictions.join(", ")
+      : "None selected";
   summaryContainer.innerHTML = `
     <div class="summary-row">
       <strong>Landlord / Manager</strong>
