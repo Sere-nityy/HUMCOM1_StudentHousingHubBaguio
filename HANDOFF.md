@@ -8,7 +8,7 @@
 ---
 
 ## 1. Student Information
-
+!!!!! THIS WILL BE DELETED AFTER INSTRUCTOR GRADED MY WEBSITE !!!!!
 - **Name:** Pasking, Dreavy T.
 - **Course & Section:** IDA-2
 - **Root Folder Name:** Z:\FINALS\HUMCOM1_StudentHousingHubBaguio
@@ -109,10 +109,28 @@ Image 2 About Us https://share.google/zQvi4gtf70qiKTWSG
 Image 3 About Us https://share.google/k32FwiHWtCkYLcQXS
 
 Listing 1: Private Attic Room https://share.google/MCg2u1RHqkVQzV0zD
-Listing 2: Whole Quad-Dorm Room (Barkada Unit) https://share.google/jqKmGW0chFkTfVIJw 
+Bathroom https://share.google/sAxaVitvJ79dCoVlZ
+Living Space https://www.marthastewart.com/attic-room-ideas-8605814
+Study Area https://www.marthastewart.com/attic-room-ideas-8605814
+
+Listing 2:   (Barkada Unit) https://housing.osu.edu/hms/roomsearch/vr360?roomtype=658
+Pics 1-4 Same Source.
+
+
 Listing 3: Male Bedspace Slots Available https://share.google/YrMXmu3UNRcENsz5E
+LivingRoom https://www.facebook.com/photo?fbid=122296956350144965&set=pcb.2140119293288251
+Kitchen https://www.facebook.com/photo?fbid=122296956368144965&set=pcb.2140119293288251
+Yard https://www.facebook.com/photo/?fbid=122296956392144965&set=pcb.2140119293288251
+
 Listing 4: Solo Studio Apartment Unit https://share.google/QYxUepXJzhf0MYQvO
-Listing 5: Twin Sharing Room for Female Students https://share.google/BAPVXQHf0cUGwSceT
+Pics 1-4 https://www.agoda.com/a-cozy-homely-studio-type-unit-in-it-park-cebu/hotel/cebu-ph.html?cid=1844104&ds=iy%2BroXZT%2BxcVoZKv
+
+Listing 5: Twin Sharing Room for Female Students https://www.agoda.com/standard-twin-room-with-shared-bathroom-101-stay/hotel/taipei-tw.html?cid=1844104&ds=H3yW6BwKBkVyJNYT
+Pic 1-4 Same Source.
+
 Listing 6: Cozy Private Room with Balcony https://share.google/17fazEdw4Bon2wfzm
+Bed https://www.facebook.com/photo/?fbid=1580134734118296&set=pcb.1580135097451593
+Closet https://www.facebook.com/photo/?fbid=1580134730784963&set=pcb.1580135097451593
+Kitchen https://www.propertyguru.com.sg/listing/for-rent-people-s-park-complex-24396937
 
 - [Website, article, or tool you used: Author. (Year). Title. Link]

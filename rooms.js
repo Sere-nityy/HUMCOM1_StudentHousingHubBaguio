@@ -160,10 +160,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       registryDate: "November 6, 2026",
       photos: [
-        "assets/images/room2.jpg",
-        "assets/images/room2-2.jpg",
-        "assets/images/room2-3.jpg",
-        "assets/images/room2-4.jpg",
+        "assets/images/wholeQuadRoom.png",
+        "assets/images/wholeQuadRoomStudyArea.png",
+        "assets/images/wholeQuadRoomStudyAreaAngle2.png",
+        "assets/images/wholeQuadRoomBathroom.png",
       ],
     },
 
@@ -186,10 +186,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       registryDate: "November 5, 2026",
       photos: [
-        "assets/images/room3.jpg",
-        "assets/images/room3-2.jpg",
-        "assets/images/room3-3.jpg",
-        "assets/images/room3-4.jpg",
+        "assets/images/maleBedspaceSlots.jpg",
+        "assets/images/maleBedspaceSlotsLivingRoom.jpg",
+        "assets/images/maleBedspaceSlotsKitchen.jpg",
+        "assets/images/maleBedspaceSlotsYard.jpg",
       ],
     },
 
@@ -212,10 +212,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       registryDate: "November 6, 2026",
       photos: [
-        "assets/images/room4.jpg",
-        "assets/images/room4-2.jpg",
-        "assets/images/room4-3.jpg",
-        "assets/images/room4-4.jpg",
+        "assets/images/soloStudioApartment.jpg",
+        "assets/images/soloStudioApartmentDiningArea.webp",
+        "assets/images/soloStudioApartmentKitchen.webp",
+        "assets/images/soloStudioApartmentBed.webp",
       ],
     },
 
@@ -238,10 +238,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       registryDate: "November 4, 2026",
       photos: [
-        "assets/images/room5.jpg",
-        "assets/images/room5-2.jpg",
-        "assets/images/room5-3.jpg",
-        "assets/images/room5-4.jpg",
+        "assets/images/twinSharingRoom.jpg",
+        "assets/images/twinSharingRoomAngle2.webp",
+        "assets/images/twinSharingRoomAngle3.webp",
+        "assets/images/twinSharingRoomLaundry.jpg",
       ],
     },
 
@@ -264,10 +264,10 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       registryDate: "November 6, 2026",
       photos: [
-        "assets/images/room6.jpg",
-        "assets/images/room6-2.jpg",
-        "assets/images/room6-3.jpg",
-        "assets/images/room6-4.jpg",
+        "assets/images/cozyPrivateRoomWithBalcony.jpg",
+        "assets/images/cozyPrivateRoomWithBalconyBed.jpg",
+        "assets/images/cozyPrivateRoomWithBalconyCloset.jpg",
+        "assets/images/cozyPrivateRoomWithBalconyKitchen.jpg",
       ],
     },
   };
