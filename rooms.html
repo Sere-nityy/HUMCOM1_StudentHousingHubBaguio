@@ -1,309 +1,522 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find Rooms - StudentHousingHub Baguio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="rooms.css">
-</head>
-<body>
-
-  <header class="navigationBars">
-    <div class="brand-title">
-      <h1><a href="index.html" class="brand-link">StudentHousingHub Baguio</a></h1>
-    </div>
-
-    <nav class="nav-buttons" aria-label="Primary Navigation">
-      <a href="index.html" class="headerButton">Home</a>
-      <a href="rooms.html" class="headerButton active" aria-current="page">Find Rooms</a>
-      <a href="register-property.html" class="headerButton">List Property (Landlords)</a>
-      <a href="support.html" class="headerButton">Support</a>
-    </nav>
-  </header>
-
-  <section class="search-hero">
-    <h2>Scam-Free Student Housing in Baguio City</h2>
-    <p>Filter through verified rooms, view complete property parameters, and unlock direct landlord access securely.</p>
-  </section>
-
-  <div class="filter-wrapper">
-    <section class="filter-container" aria-label="Filter Accommodations">
-      
-      <!-- ROW 1: FULL-WIDTH SEARCH BAR + RESET BUTTON -->
-      <div class="filter-top-row">
-        <div class="filter-group filter-search">
-          <label for="searchInput">Location or Keyword</label>
-          <div class="input-icon-wrap">
-            <span class="input-icon">🔍</span>
-            <input type="text" id="searchInput" placeholder="Search street, barangay, or room feature (e.g. Bonifacio, Attic, Balcony)...">
-          </div>
-        </div>
-
-        <button type="button" id="resetFiltersBtn" class="reset-btn">↺ Reset Filters</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find Rooms - StudentHousingHub Baguio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="rooms.css" />
+  </head>
+  <body>
+    <header class="navigationBars">
+      <div class="brand-title">
+        <h1>
+          <a href="index.html" class="brand-link">StudentHousingHub Baguio</a>
+        </h1>
       </div>
 
-      <hr class="filter-divider">
+      <nav class="nav-buttons" aria-label="Primary Navigation">
+        <a href="index.html" class="headerButton">Home</a>
+        <a href="rooms.html" class="headerButton active" aria-current="page"
+          >Find Rooms</a
+        >
+        <a href="register-property.html" class="headerButton"
+          >List Property (Landlords)</a
+        >
+        <a href="support.html" class="headerButton">Support</a>
+      </nav>
+    </header>
 
-      <!-- ROW 2: 5 EVEN DROPDOWN FILTERS -->
-      <div class="filter-dropdowns-row">
-        <div class="filter-group">
-          <label for="universityFilter">University</label>
-          <select id="universityFilter">
-            <option value="all">All Universities</option>
-            <option value="slu">Saint Louis University (SLU)</option>
-            <option value="uc">University of the Cordilleras (UC)</option>
-            <option value="ub">University of Baguio (UB)</option>
-          </select>
-        </div>
-
-        <div class="filter-group">
-          <label for="categoryFilter">Room Layout</label>
-          <select id="categoryFilter">
-            <option value="all">All Layouts</option>
-            <option value="solo">Solo Room</option>
-            <option value="shared">Shared / Bedspace</option>
-          </select>
-        </div>
-
-        <div class="filter-group">
-          <label for="genderFilter">Tenant Type</label>
-          <select id="genderFilter">
-            <option value="all">Any Gender</option>
-            <option value="male">Male Only</option>
-            <option value="female">Female Only</option>
-            <option value="coed">Co-ed / Any</option>
-          </select>
-        </div>
-
-        <div class="filter-group">
-          <label for="priceFilter">Max Budget</label>
-          <select id="priceFilter">
-            <option value="all">Any Price</option>
-            <option value="3500">Up to ₱3,500 / mo</option>
-            <option value="5500">Up to ₱5,500 / mo</option>
-            <option value="8000">Up to ₱8,000 / mo</option>
-            <option value="15000">Up to ₱15,000 / mo</option>
-          </select>
-        </div>
-
-        <div class="filter-group">
-          <label for="sortFilter">Sort By</label>
-          <select id="sortFilter">
-            <option value="default">Featured</option>
-            <option value="price-asc">Price: Low to High</option>
-            <option value="price-desc">Price: High to Low</option>
-          </select>
-        </div>
-      </div>
-
+    <section class="search-hero">
+      <h2>Scam-Free Student Housing in Baguio City</h2>
+      <p>
+        Filter through verified rooms, view complete property parameters, and
+        unlock direct landlord access securely.
+      </p>
     </section>
-  </div>
 
-  <main class="catalog-section">
-    <div class="catalog-header">
-      <h3 class="catalog-title">Available Verified Accommodations</h3>
-      <p id="resultsCount" class="results-count" aria-live="polite">Showing 6 of 6 verified rooms</p>
+    <div class="filter-wrapper">
+      <section class="filter-container" aria-label="Filter Accommodations">
+        <!-- ROW 1: FULL-WIDTH SEARCH BAR + RESET BUTTON -->
+        <div class="filter-top-row">
+          <div class="filter-group filter-search">
+            <label for="searchInput">Location or Keyword</label>
+            <div class="input-icon-wrap">
+              <span class="input-icon">🔍</span>
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search street, barangay, or room feature (e.g. Bonifacio, Attic, Balcony)..."
+              />
+            </div>
+          </div>
+
+          <button type="button" id="resetFiltersBtn" class="reset-btn">
+            ↺ Reset Filters
+          </button>
+        </div>
+
+        <hr class="filter-divider" />
+
+        <!-- ROW 2: 5 EVEN DROPDOWN FILTERS -->
+        <div class="filter-dropdowns-row">
+          <div class="filter-group">
+            <label for="universityFilter">University</label>
+            <select id="universityFilter">
+              <option value="all">All Universities</option>
+              <option value="slu">Saint Louis University (SLU)</option>
+              <option value="uc">University of the Cordilleras (UC)</option>
+              <option value="ub">University of Baguio (UB)</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="categoryFilter">Room Layout</label>
+            <select id="categoryFilter">
+              <option value="all">All Layouts</option>
+              <option value="solo">Solo Room</option>
+              <option value="shared">Shared / Bedspace</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="genderFilter">Tenant Type</label>
+            <select id="genderFilter">
+              <option value="all">Any Gender</option>
+              <option value="male">Male Only</option>
+              <option value="female">Female Only</option>
+              <option value="coed">Co-ed / Any</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="priceFilter">Max Budget</label>
+            <select id="priceFilter">
+              <option value="all">Any Price</option>
+              <option value="3500">Up to ₱3,500 / mo</option>
+              <option value="5500">Up to ₱5,500 / mo</option>
+              <option value="8000">Up to ₱8,000 / mo</option>
+              <option value="15000">Up to ₱15,000 / mo</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="sortFilter">Sort By</label>
+            <select id="sortFilter">
+              <option value="default">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
+          </div>
+        </div>
+      </section>
     </div>
 
-    <div id="noResultsMessage" class="no-results hidden">
-      <h4>No rooms match your selected filters</h4>
-      <p>Try increasing your maximum budget or resetting your filters to see all available Baguio listings.</p>
-      <button type="button" id="emptyResetBtn" class="reset-btn">Show All Rooms</button>
-    </div>
-
-    <div class="grid-container" id="roomsGrid">
-
-      <!-- PLACEHOLDER 1: SLU SOLO ROOM -->
-      <article class="room-card slu solo" data-price="5500" data-gender="coed">
-        <div class="room-img-placeholder">
-          <span class="badge-verified">✓ Verified Listing</span>
-          <img src="assets/images/privateAtticRoom.jpg" alt="Private Attic Solo Room" onerror="this.style.display='none'">
-          <span class="img-fallback-text">[ Private Attic Room Image ]</span>
-        </div>
-        <div class="room-details">
-          <div class="room-price">₱5,500 <span>/ month</span></div>
-          <h4 class="room-name">Private Attic Solo Room</h4>
-          <div class="room-location">📍 New Lucban, Baguio City</div>
-          <div class="room-tags">
-            <span class="tag tag-structure">🔑 Solo Room</span>
-            <span class="tag tag-restriction">🚫 Single Tenant Only</span>
-            <span class="tag tag-highlight">🚶 5-min walk to SLU Main</span>
-          </div>
-          <div class="btn-group">
-            <a href="room-details-placeholder1.html" class="contact-btn btn-details">View Details</a>
-            <a href="verify.html?room=1" class="contact-btn btn-inquire">Inquire Now</a>
-          </div>
-          <div class="admin-timestamp-box">
-            <span class="admin-timestamp"><span class="timestamp-dot"></span>Last checked and updated by admin on: November 6, 2026</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- PLACEHOLDER 2: SLU MULTI-PERSON BARKADA ROOM -->
-      <article class="room-card slu shared" data-price="12000" data-gender="coed">
-        <div class="room-img-placeholder">
-          <span class="badge-verified">✓ Verified Listing</span>
-          <img src="assets/images/wholeQuadRoom.jpg" alt="Whole Quad-Dorm Room" onerror="this.style.display='none'">
-          <span class="img-fallback-text">[ Quad Dorm Room Image ]</span>
-        </div>
-        <div class="room-details">
-          <div class="room-price">₱12,000 <span>/ month fixed</span></div>
-          <h4 class="room-name">Whole Quad-Dorm Room (Barkada Unit)</h4>
-          <div class="room-location">📍 Bonifacio Street, Baguio City</div>
-          <div class="room-tags">
-            <span class="tag tag-structure">👥 Shared Room</span>
-            <span class="tag tag-group-allowed">👨‍👩‍👦‍👦 Accommodates 2-4 Pax</span>
-            <span class="tag tag-highlight">🚶 3-min walk to SLU Main</span>
-          </div>
-          <div class="btn-group">
-            <a href="room-details-placeholder2.html" class="contact-btn btn-details">View Details</a>
-            <a href="verify.html?room=2" class="contact-btn btn-inquire">Inquire Now</a>
-          </div>
-          <div class="admin-timestamp-box">
-            <span class="admin-timestamp"><span class="timestamp-dot"></span>Last checked and updated by admin on: November 6, 2026</span>
-          </div>
-        </div>
-      </article>
-      <!-- PLACEHOLDER 3: UC CHEAP SHARED BEDSPACE -->
-      <article class="room-card uc shared" data-price="3200" data-gender="male">
-        <div class="room-img-placeholder">
-          <span class="badge-verified">✓ Verified Listing</span>
-          <img src="assets/images/maleBedspaceSlots.jpg" alt="Male Bedspace Slots Available" onerror="this.style.display='none'">
-          <span class="img-fallback-text">[ Male Bedspace Image ]</span>
-        </div>
-        <div class="room-details">
-          <div class="room-price">₱3,200 <span>/ month per head</span></div>
-          <h4 class="room-name">Male Bedspace Slots Available</h4>
-          <div class="room-location">📍 Gov. Pack Road, Baguio City</div>
-          <div class="room-tags">
-            <span class="tag tag-structure">👥 Shared Bedspace</span>
-            <span class="tag tag-group-allowed">📶 Multiple Slots Left</span>
-            <span class="tag tag-highlight">🚶 Near UC and SM Baguio</span>
-          </div>
-          <div class="btn-group">
-            <a href="room-details-placeholder3.html" class="contact-btn btn-details">View Details</a>
-            <a href="verify.html?room=3" class="contact-btn btn-inquire">Inquire Now</a>
-          </div>
-          <div class="admin-timestamp-box">
-            <span class="admin-timestamp"><span class="timestamp-dot"></span>Last checked and updated by admin on: November 5, 2026</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- PLACEHOLDER 4: UB SOLO APARTMENT -->
-      <article class="room-card ub solo" data-price="7500" data-gender="coed">
-        <div class="room-img-placeholder">
-          <span class="badge-verified">✓ Verified Listing</span>
-          <img src="assets/images/soloStudioApartment.jpg" alt="Solo Studio Apartment Unit" onerror="this.style.display='none'">
-          <span class="img-fallback-text">[ Solo Studio Image ]</span>
-        </div>
-        <div class="room-details">
-          <div class="room-price">₱7,500 <span>/ month</span></div>
-          <h4 class="room-name">Solo Studio Apartment Unit</h4>
-          <div class="room-location">📍 General Luna Road, Baguio City</div>
-          <div class="room-tags">
-            <span class="tag tag-structure">🔑 Solo Room</span>
-            <span class="tag tag-restriction">🚫 Single Tenant Only</span>
-            <span class="tag tag-highlight">🚶 4-min walk to UB</span>
-          </div>
-          <div class="btn-group">
-            <a href="room-details-placeholder4.html" class="contact-btn btn-details">View Details</a>
-            <a href="verify.html?room=4" class="contact-btn btn-inquire">Inquire Now</a>
-          </div>
-          <div class="admin-timestamp-box">
-            <span class="admin-timestamp"><span class="timestamp-dot"></span>Last checked and updated by admin on: November 6, 2026</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- PLACEHOLDER 5: UB SHARED TWIN ROOM -->
-      <article class="room-card ub shared" data-price="4500" data-gender="female">
-        <div class="room-img-placeholder">
-          <span class="badge-verified">✓ Verified Listing</span>
-          <img src="assets/images/twinSharingRoom.avif" alt="Twin Sharing Room for Female Students" onerror="this.style.display='none'">
-          <span class="img-fallback-text">[ Twin Sharing Image ]</span>
-        </div>
-        <div class="room-details">
-          <div class="room-price">₱4,500 <span>/ month per head</span></div>
-          <h4 class="room-name">Twin Sharing Room for Female Students</h4>
-          <div class="room-location">📍 Assumption Road, Baguio City</div>
-          <div class="room-tags">
-            <span class="tag tag-structure">👥 Shared Room</span>
-            <span class="tag tag-group-allowed">👥 Max 2 Tenants</span>
-            <span class="tag tag-highlight">🚶 6-min walk to UB / SLU</span>
-          </div>
-          <div class="btn-group">
-            <a href="room-details-placeholder5.html" class="contact-btn btn-details">View Details</a>
-            <a href="verify.html?room=5" class="contact-btn btn-inquire">Inquire Now</a>
-          </div>
-          <div class="admin-timestamp-box">
-            <span class="admin-timestamp"><span class="timestamp-dot"></span>Last checked and updated by admin on: November 4, 2026</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- PLACEHOLDER 6: UC PRIVATE STUDIO ROOM -->
-      <article class="room-card uc solo" data-price="6000" data-gender="coed">
-        <div class="room-img-placeholder">
-          <span class="badge-verified">✓ Verified Listing</span>
-          <img src="assets/images/cozyPrivateRoomWithBalcony.jpg" alt="Cozy Private Room with Balcony" onerror="this.style.display='none'">
-          <span class="img-fallback-text">[ Cozy Private Room Image ]</span>
-        </div>
-        <div class="room-details">
-          <div class="room-price">₱6,000 <span>/ month</span></div>
-          <h4 class="room-name">Cozy Private Room with Balcony</h4>
-          <div class="room-location">📍 Military Cut-Off, Baguio City</div>
-          <div class="room-tags">
-            <span class="tag tag-structure">🔑 Solo Room</span>
-            <span class="tag tag-restriction">🚫 Single Tenant Only</span>
-            <span class="tag tag-highlight">🚌 1 Jeepney Ride to UC</span>
-          </div>
-          <div class="btn-group">
-            <a href="room-details-placeholder6.html" class="contact-btn btn-details">View Details</a>
-            <a href="verify.html?room=6" class="contact-btn btn-inquire">Inquire Now</a>
-          </div>
-          <div class="admin-timestamp-box">
-            <span class="admin-timestamp"><span class="timestamp-dot"></span>Last checked and updated by admin on: November 6, 2026</span>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </main>
-
-  <footer>
-    <div class="footer-container">
-      <div class="footer-brand">
-        <h2>Baguio<span>HousingHub</span></h2>
-        <p>Verified, scam-free student housing catalog in Baguio City. Helping SLU, UC, and UB students find safe rooms with transparent landlord access.</p>
+    <main class="catalog-section">
+      <div class="catalog-header">
+        <h3 class="catalog-title">Available Verified Accommodations</h3>
+        <p id="resultsCount" class="results-count" aria-live="polite">
+          Showing 6 of 6 verified rooms
+        </p>
       </div>
 
-      <nav class="footer-col" aria-label="Platform Links">
-        <h4>Platform</h4>
-        <ul>
-          <li><a href="rooms.html">Find Verified Rooms</a></li>
-          <li><a href="verify.html">Student Verification</a></li>
-          <li><a href="register-property.html">List Property (Landlords)</a></li>
-        </ul>
-      </nav>
+      <div id="noResultsMessage" class="no-results hidden">
+        <h4>No rooms match your selected filters</h4>
+        <p>
+          Try increasing your maximum budget or resetting your filters to see
+          all available Baguio listings.
+        </p>
+        <button type="button" id="emptyResetBtn" class="reset-btn">
+          Show All Rooms
+        </button>
+      </div>
 
-      <nav class="footer-col" aria-label="Help and Safety Links">
-        <h4>Help & Safety</h4>
-        <ul>
-          <li><a href="support.html">Support & FAQ Center</a></li>
-          <li><a href="support.html#errorGuideSection">Website Error Guide</a></li>
-          <li><a href="support.html#ticketFormSection">Report a Scam / Listing</a></li>
-        </ul>
-      </nav>
-    </div>
+      <div class="grid-container" id="roomsGrid">
+        <!-- PLACEHOLDER 1: SLU SOLO ROOM -->
+        <article
+          class="room-card slu solo"
+          data-price="5500"
+          data-gender="coed"
+        >
+          <div class="room-img-placeholder">
+            <span class="badge-verified">✓ Verified Listing</span>
+            <img
+              src="assets/images/privateAtticRoom.jpg"
+              alt="Private Attic Solo Room"
+              onerror="this.style.display = 'none'"
+            />
+            <span class="img-fallback-text">[ Private Attic Room Image ]</span>
+          </div>
+          <div class="room-details">
+            <div class="room-price">₱5,500 <span>/ month</span></div>
+            <h4 class="room-name">Private Attic Solo Room</h4>
+            <div class="room-location">📍 New Lucban, Baguio City</div>
+            <div class="room-tags">
+              <span class="tag tag-structure">🔑 Solo Room</span>
+              <span class="tag tag-restriction">🚫 Single Tenant Only</span>
+              <span class="tag tag-highlight">🚶 5-min walk to SLU Main</span>
+            </div>
+            <div class="btn-group">
+              <a
+                href="room-details-placeholder1.html"
+                class="contact-btn btn-details"
+                >View Details</a
+              >
+              <a href="verify.html?room=1" class="contact-btn btn-inquire"
+                >Inquire Now</a
+              >
+            </div>
+            <div class="admin-timestamp-box">
+              <span class="admin-timestamp"
+                ><span class="timestamp-dot"></span>Last checked and updated by
+                admin on: November 6, 2026</span
+              >
+            </div>
+          </div>
+        </article>
 
-    <div class="footer-bottom">
-      <small>&copy; 2026 BaguioHousingHub. All rights reserved.</small>
-      <address style="font-style: normal;">📍 Baguio City, Benguet, Philippines</address>
-    </div>
-  </footer>
+        <!-- PLACEHOLDER 2: SLU MULTI-PERSON BARKADA ROOM -->
+        <article
+          class="room-card slu shared"
+          data-price="12000"
+          data-gender="coed"
+        >
+          <div class="room-img-placeholder">
+            <span class="badge-verified">✓ Verified Listing</span>
+            <img
+              src="assets/images/wholeQuadRoom.jpg"
+              alt="Whole Quad-Dorm Room"
+              onerror="this.style.display = 'none'"
+            />
+            <span class="img-fallback-text">[ Quad Dorm Room Image ]</span>
+          </div>
+          <div class="room-details">
+            <div class="room-price">₱12,000 <span>/ month fixed</span></div>
+            <h4 class="room-name">Whole Quad-Dorm Room (Barkada Unit)</h4>
+            <div class="room-location">📍 Bonifacio Street, Baguio City</div>
+            <div class="room-tags">
+              <span class="tag tag-structure">👥 Shared Room</span>
+              <span class="tag tag-group-allowed">👨‍👩‍👦‍👦 Accommodates 2-4 Pax</span>
+              <span class="tag tag-highlight">🚶 3-min walk to SLU Main</span>
+            </div>
+            <div class="btn-group">
+              <a
+                href="room-details-placeholder2.html"
+                class="contact-btn btn-details"
+                >View Details</a
+              >
+              <a href="verify.html?room=2" class="contact-btn btn-inquire"
+                >Inquire Now</a
+              >
+            </div>
+            <div class="admin-timestamp-box">
+              <span class="admin-timestamp"
+                ><span class="timestamp-dot"></span>Last checked and updated by
+                admin on: November 6, 2026</span
+              >
+            </div>
+          </div>
+        </article>
+        <!-- PLACEHOLDER 3: UC CHEAP SHARED BEDSPACE -->
+        <article
+          class="room-card uc shared"
+          data-price="3200"
+          data-gender="male"
+        >
+          <div class="room-img-placeholder">
+            <span class="badge-verified">✓ Verified Listing</span>
+            <img
+              src="assets/images/maleBedspaceSlots.jpg"
+              alt="Male Bedspace Slots Available"
+              onerror="this.style.display = 'none'"
+            />
+            <span class="img-fallback-text">[ Male Bedspace Image ]</span>
+          </div>
+          <div class="room-details">
+            <div class="room-price">₱3,200 <span>/ month per head</span></div>
+            <h4 class="room-name">Male Bedspace Slots Available</h4>
+            <div class="room-location">📍 Gov. Pack Road, Baguio City</div>
+            <div class="room-tags">
+              <span class="tag tag-structure">👥 Shared Bedspace</span>
+              <span class="tag tag-group-allowed">📶 Multiple Slots Left</span>
+              <span class="tag tag-highlight">🚶 Near UC and SM Baguio</span>
+            </div>
+            <div class="btn-group">
+              <a
+                href="room-details-placeholder3.html"
+                class="contact-btn btn-details"
+                >View Details</a
+              >
+              <a href="verify.html?room=3" class="contact-btn btn-inquire"
+                >Inquire Now</a
+              >
+            </div>
+            <div class="admin-timestamp-box">
+              <span class="admin-timestamp"
+                ><span class="timestamp-dot"></span>Last checked and updated by
+                admin on: November 5, 2026</span
+              >
+            </div>
+          </div>
+        </article>
 
-  <script src="rooms.js"></script>
-</body>
+        <!-- PLACEHOLDER 4: UB SOLO APARTMENT -->
+        <article class="room-card ub solo" data-price="7500" data-gender="coed">
+          <div class="room-img-placeholder">
+            <span class="badge-verified">✓ Verified Listing</span>
+            <img
+              src="assets/images/soloStudioApartment.jpg"
+              alt="Solo Studio Apartment Unit"
+              onerror="this.style.display = 'none'"
+            />
+            <span class="img-fallback-text">[ Solo Studio Image ]</span>
+          </div>
+          <div class="room-details">
+            <div class="room-price">₱7,500 <span>/ month</span></div>
+            <h4 class="room-name">Solo Studio Apartment Unit</h4>
+            <div class="room-location">📍 General Luna Road, Baguio City</div>
+            <div class="room-tags">
+              <span class="tag tag-structure">🔑 Solo Room</span>
+              <span class="tag tag-restriction">🚫 Single Tenant Only</span>
+              <span class="tag tag-highlight">🚶 4-min walk to UB</span>
+            </div>
+            <div class="btn-group">
+              <a
+                href="room-details-placeholder4.html"
+                class="contact-btn btn-details"
+                >View Details</a
+              >
+              <a href="verify.html?room=4" class="contact-btn btn-inquire"
+                >Inquire Now</a
+              >
+            </div>
+            <div class="admin-timestamp-box">
+              <span class="admin-timestamp"
+                ><span class="timestamp-dot"></span>Last checked and updated by
+                admin on: November 6, 2026</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <!-- PLACEHOLDER 5: UB SHARED TWIN ROOM -->
+        <article
+          class="room-card ub shared"
+          data-price="4500"
+          data-gender="female"
+        >
+          <div class="room-img-placeholder">
+            <span class="badge-verified">✓ Verified Listing</span>
+            <img
+              src="assets/images/twinSharingRoom.avif"
+              alt="Twin Sharing Room for Female Students"
+              onerror="this.style.display = 'none'"
+            />
+            <span class="img-fallback-text">[ Twin Sharing Image ]</span>
+          </div>
+          <div class="room-details">
+            <div class="room-price">₱4,500 <span>/ month per head</span></div>
+            <h4 class="room-name">Twin Sharing Room for Female Students</h4>
+            <div class="room-location">📍 Assumption Road, Baguio City</div>
+            <div class="room-tags">
+              <span class="tag tag-structure">👥 Shared Room</span>
+              <span class="tag tag-group-allowed">👥 Max 2 Tenants</span>
+              <span class="tag tag-highlight">🚶 6-min walk to UB / SLU</span>
+            </div>
+            <div class="btn-group">
+              <a
+                href="room-details-placeholder5.html"
+                class="contact-btn btn-details"
+                >View Details</a
+              >
+              <a href="verify.html?room=5" class="contact-btn btn-inquire"
+                >Inquire Now</a
+              >
+            </div>
+            <div class="admin-timestamp-box">
+              <span class="admin-timestamp"
+                ><span class="timestamp-dot"></span>Last checked and updated by
+                admin on: November 4, 2026</span
+              >
+            </div>
+          </div>
+        </article>
+
+        <!-- PLACEHOLDER 6: UC PRIVATE STUDIO ROOM -->
+        <article class="room-card uc solo" data-price="6000" data-gender="coed">
+          <div class="room-img-placeholder">
+            <span class="badge-verified">✓ Verified Listing</span>
+            <img
+              src="assets/images/cozyPrivateRoomWithBalcony.jpg"
+              alt="Cozy Private Room with Balcony"
+              onerror="this.style.display = 'none'"
+            />
+            <span class="img-fallback-text">[ Cozy Private Room Image ]</span>
+          </div>
+          <div class="room-details">
+            <div class="room-price">₱6,000 <span>/ month</span></div>
+            <h4 class="room-name">Cozy Private Room with Balcony</h4>
+            <div class="room-location">📍 Military Cut-Off, Baguio City</div>
+            <div class="room-tags">
+              <span class="tag tag-structure">🔑 Solo Room</span>
+              <span class="tag tag-restriction">🚫 Single Tenant Only</span>
+              <span class="tag tag-highlight">🚌 1 Jeepney Ride to UC</span>
+            </div>
+            <div class="btn-group">
+              <a
+                href="room-details-placeholder6.html"
+                class="contact-btn btn-details"
+                >View Details</a
+              >
+              <a href="verify.html?room=6" class="contact-btn btn-inquire"
+                >Inquire Now</a
+              >
+            </div>
+            <div class="admin-timestamp-box">
+              <span class="admin-timestamp"
+                ><span class="timestamp-dot"></span>Last checked and updated by
+                admin on: November 6, 2026</span
+              >
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- ===== DYNAMIC ROOM DETAILS OVERLAY MODAL ===== -->
+      <div
+        id="roomDetailsModal"
+        class="modal-backdrop hidden"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="modalRoomTitle"
+      >
+        <div class="room-modal-box">
+          <div class="room-modal-top">
+            <span class="verified-pill">✓ Verified Profile</span>
+            <button
+              type="button"
+              id="closeRoomModalX"
+              class="modal-close-x"
+              aria-label="Close"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div class="room-gallery-showcase">
+            <div class="gallery-main-frame" id="galleryMainFrame">
+              <span id="zoomHintBadge" class="zoom-hint-badge"
+                >🔍 Click image to zoom &amp; drag</span
+              >
+              <img
+                id="modalRoomImage"
+                src=""
+                alt="Room Showcase"
+                class="room-modal-img"
+              />
+              <button
+                type="button"
+                id="galleryPrevBtn"
+                class="gallery-nav-btn prev"
+                aria-label="Previous photo"
+              >
+                ‹
+              </button>
+              <button
+                type="button"
+                id="galleryNextBtn"
+                class="gallery-nav-btn next"
+                aria-label="Next photo"
+              >
+                ›
+              </button>
+              <span id="galleryCounter" class="gallery-counter">1 / 4</span>
+            </div>
+            <div id="modalThumbnails" class="modal-thumb-grid"></div>
+          </div>
+
+          <div class="room-modal-header-info">
+            <span id="modalRoomPrice" class="room-modal-price"></span>
+            <h3 id="modalRoomTitle"></h3>
+            <p id="modalRoomLocation" class="room-modal-loc"></p>
+          </div>
+
+          <div class="room-modal-section">
+            <h4>Property Overview</h4>
+            <p id="modalRoomOverview"></p>
+          </div>
+
+          <div class="room-modal-section">
+            <h4>Verified Specifications</h4>
+            <div id="modalRoomSpecs" class="specs-badge-grid"></div>
+          </div>
+
+          <div class="room-modal-section">
+            <h4>House Policies</h4>
+            <ul id="modalRoomPolicies" class="policy-list"></ul>
+          </div>
+
+          <div class="room-modal-actions">
+            <button
+              type="button"
+              id="closeRoomModalBtn"
+              class="btn-modal-secondary"
+            >
+              Back to Catalog
+            </button>
+            <a
+              id="modalInquireLink"
+              href="verify.html"
+              class="btn-modal-primary"
+              >Proceed to Inquiry (₱0 Due Today) →</a
+            >
+          </div>
+
+          <p id="modalRegistryFooter" class="registry-footer"></p>
+        </div>
+      </div>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-brand">
+          <h2>Baguio<span>HousingHub</span></h2>
+          <p>
+            Verified, scam-free student housing catalog in Baguio City. Helping
+            SLU, UC, and UB students find safe rooms with transparent landlord
+            access.
+          </p>
+        </div>
+
+        <nav class="footer-col" aria-label="Platform Links">
+          <h4>Platform</h4>
+          <ul>
+            <li><a href="index.html">Find Verified Rooms</a></li>
+            <li><a href="verify.html">Student Verification</a></li>
+            <li>
+              <a href="register-property.html">List Property (Landlords)</a>
+            </li>
+          </ul>
+        </nav>
+
+        <nav class="footer-col" aria-label="Help and Safety Links">
+          <h4>Help & Safety</h4>
+          <ul>
+            <li><a href="support.html">Support & FAQ Center</a></li>
+            <li><a href="support.html">Website Error Guide</a></li>
+            <li><a href="support.html">Report a Scam / Listing</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <small>&copy; 2026 BaguioHousingHub. All rights reserved.</small>
+        <address style="font-style: normal">
+          📍 Baguio City, Benguet, Philippines
+        </address>
+      </div>
+    </footer>
+    <script src="rooms.js"></script>
+  </body>
 </html>
