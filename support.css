@@ -38,7 +38,7 @@ body::after {
 }
 
 .support-hero p {
-  font-size: clamp(14px, 1.8vw, 17px);
+  font-size: clamp(17px, 1.8vw, 18.5px);
   color: var(--color-headerButtons);
   max-width: 680px;
   margin: 0 auto;
@@ -86,13 +86,13 @@ body::after {
 }
 
 .action-card h3 {
-  font-size: 18px;
+  font-size: 20px;
   color: var(--color-primary);
   margin-bottom: 8px;
 }
 
 .action-card p {
-  font-size: 13.5px;
+  font-size: 16.5px;
   color: var(--color-text-secondary);
   line-height: 1.5;
   margin-bottom: 16px;
@@ -103,12 +103,12 @@ body::after {
   background-color: #f1f5f9;
   padding: 1px 5px;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 16px;
   color: var(--color-primary);
 }
 
 .card-link {
-  font-size: 13.5px;
+  font-size: 18.5px;
   font-weight: 700;
   color: var(--color-secondary);
   text-decoration: none;
@@ -143,7 +143,7 @@ body::after {
 
 .section-eyebrow {
   display: block;
-  font-size: 11.5px;
+  font-size: 15.5px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.7px;
@@ -152,7 +152,7 @@ body::after {
 }
 
 .section-header-row h3 {
-  font-size: clamp(20px, 2.5vw, 24px);
+  font-size: clamp(23px, 2.5vw, 27px);
   color: var(--color-primary);
 }
 
@@ -160,7 +160,7 @@ body::after {
   background-color: #f0fdf4;
   color: #166534;
   border: 1px solid #bbf7d0;
-  font-size: 12px;
+  font-size: 15px;
   font-weight: 700;
   padding: 5px 12px;
   border-radius: 50px;
@@ -182,13 +182,13 @@ body::after {
 
 .checklist-item strong {
   display: block;
-  font-size: 14px;
+  font-size: 17px;
   color: var(--color-primary);
   margin-bottom: 4px;
 }
 
 .checklist-item p {
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--color-text-secondary);
   line-height: 1.5;
   margin: 0;
@@ -255,7 +255,7 @@ body::after {
   border: 1.5px solid var(--color-border);
   border-radius: 50px;
   padding: 7px 16px;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -290,7 +290,7 @@ body::after {
   border: none;
   padding: 15px 18px;
   text-align: left;
-  font-size: 14.5px;
+  font-size: 16.5px;
   font-weight: 700;
   color: var(--color-primary);
   display: flex;
@@ -317,7 +317,7 @@ body::after {
   padding: 14px 18px;
   border-top: 1px solid #e2e8f0;
   background-color: #ffffff;
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: #334155;
   line-height: 1.55;
 }
@@ -344,13 +344,13 @@ body::after {
 }
 
 .ticket-header h3 {
-  font-size: clamp(20px, 2.5vw, 24px);
+  font-size: clamp(22px, 2.5vw, 26px);
   color: var(--color-primary);
   margin-bottom: 6px;
 }
 
 .ticket-header p {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text-secondary);
   margin-bottom: 22px;
 }
@@ -371,7 +371,7 @@ body::after {
 .form-group label {
   display: block;
   font-weight: 600;
-  font-size: 13.5px;
+  font-size: 16.5px;
   margin-bottom: 6px;
   color: #1e293b;
 }
@@ -383,7 +383,7 @@ body::after {
   padding: 11px 13px;
   border: 1.5px solid var(--color-border);
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 15px;
   font-family: inherit;
   outline: none;
   background-color: var(--color-background);
@@ -418,7 +418,7 @@ body::after {
 }
 
 .field-hint {
-  font-size: 11.5px;
+  font-size: 13.5px;
   color: #64748b;
   margin-top: 5px;
   display: block;
@@ -504,19 +504,19 @@ body::after {
 
 .hotline-card strong {
   display: block;
-  font-size: 14.5px;
+  font-size: 15.5px;
   color: var(--color-primary);
   margin-bottom: 6px;
 }
 
 .hotline-card p {
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: #1e293b;
   margin-bottom: 4px;
 }
 
 .hotline-card span {
-  font-size: 12px;
+  font-size: 15px;
   color: var(--color-text-secondary);
 }
 
@@ -529,7 +529,7 @@ body::after {
 }
 
 .section-subtext {
-  font-size: 14px;
+  font-size: 18px;
   color: var(--color-text-secondary);
   margin-bottom: 20px;
   line-height: 1.5;
@@ -553,7 +553,7 @@ body::after {
 .error-badge {
   display: inline-block;
   align-self: flex-start;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 700;
   padding: 4px 10px;
   border-radius: 50px;
@@ -580,13 +580,13 @@ body::after {
 }
 
 .error-card h4 {
-  font-size: 17px;
+  font-size: 20px;
   color: var(--color-primary);
   margin-bottom: 6px;
 }
 
 .error-card p {
-  font-size: 13.5px;
+  font-size: 15.5px;
   color: #475569;
   line-height: 1.5;
   margin-bottom: 10px;
